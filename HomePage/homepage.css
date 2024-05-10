@@ -1,0 +1,108 @@
+.container {
+    position: relative; 
+    height: auto;
+    width: auto;
+    /*background-color: rgb(255, 188, 105);*/
+}
+.myPhoto img {
+    width: 15rem;
+    margin-top: 1rem;
+    border-radius: 50%;
+    
+}
+
+img:hover {
+    border-color: blue;
+    transform: scale(1.2);
+}
+
+button {
+    width: 150px;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-left: 10px;
+    background-color: rgb(rgb(55, 0, 255), rgb(4, 128, 0), blue);
+}
+
+button a {
+    font-weight: bold;
+    font-size: 20px;
+    color: blue;
+}
+
+
+button:hover a {
+    background-color: blue;
+    color: white;
+    transform: scale(1.2);
+}
+
+button:hover {
+    background-color: blue;
+    transform: scale(1.2);
+}
+
+
+body {
+    background-color: rgb(255, 188, 105);
+}
+
+.col-md-3 a {
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+.col-md-3 a:hover {
+    transform: scale(1.3);
+    color: white;
+    background-color: blueviolet;
+}
+
+@media screen and (max-width: 768px) {
+    .col-md-3 a {
+        text-decoration: none;
+        color: rgb(red, green, rgba(0, 0, 255, 0.836));
+        font-weight: bolder;
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .col-md-3 a {
+        text-decoration: none;
+        color: rgb(red, green, rgba(0, 0, 255, 0.836));
+        font-weight: bolder;
+        font-size: 26px;
+    }
+}
+
+.btn_g button {
+    padding: 5px;
+    border-radius: 15px;
+    margin-left: 10px;
+} 
+
+.btn_g a {
+    text-decoration: none;
+}
+
+
+.myPhoto img {
+    display: block;
+    margin: auto;
+}
+
+.desc  {
+    text-align: justify;
+    color: white;
+}
+
+.desc p  {
+    font-size: 20px;
+}
+
+body {
+    background-image: url(../FOTOT/themes.jpg);
+}

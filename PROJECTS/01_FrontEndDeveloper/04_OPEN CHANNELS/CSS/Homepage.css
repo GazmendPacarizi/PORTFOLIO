@@ -1,0 +1,33 @@
+#trap_calculation, #rec_calculation, #hcircle_calculation {
+    padding: 3px;
+    margin: 5px;
+    background-color: rgb(10, 227, 243);
+    border-radius: 5px;
+}
+
+#hcircle_calculation:hover {
+    background-color: bisque;
+    border-color: red;
+}
+
+#trap_calculation:hover {
+    background-color: bisque;
+    border-color: red;
+}
+
+#rec_calculation:hover {
+    background-color: bisque;
+    border-color: red;
+}
+
+input, textarea {
+    width: 90%;
+    padding: 2px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+/*input[type=text] - will only select text fields
+input[type=password] - will only select password fields
+input[type=number] - will only select number fields */
+
