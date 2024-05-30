@@ -1,0 +1,191 @@
+body {
+    width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.nav-item {
+    color: black;
+    font-size: 22px;
+}
+
+.nav-item a:hover {
+    transform: scale(1.3);
+}
+
+ a.navbar-brand {
+    font-size: 22px;
+}
+
+.accordion-button:hover {
+    background-color: blueviolet;
+    color: white;
+  }
+  a {
+    text-decoration: none;
+  }
+
+  .accordion-body img {
+    text-align: center;
+  }
+
+  /*.imazhet_01 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+  }*/
+
+  .imazhet_01 img {
+    display: block;
+    margin: auto;
+  }
+
+  .imazhet_02 {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Meandrimi {
+    margin: 20px 0 0 0;
+  }
+
+  .rrjedhja img {
+    display: block;
+    margin: auto;
+  }
+
+  .imazhet_03 img {
+    display: block;
+    margin: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    .imazhet_01 img {
+      width: 50%;
+    }
+
+    .imazhet_02 img {
+      width: 50%;
+    }
+  }
+
+  .m_bio img {
+    display: block;
+    margin: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    .m_bio img {
+      width: 40%;
+    }
+  }
+
+  .fash_lehta img {
+    display: block;
+    margin: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    .fash_lehta img {
+      width: 40%;
+    }
+  }
+
+  .fash_renda img {
+    display: block;
+    margin: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    .fash_renda img {
+      width: 40%;
+    }
+  }
+
+  .gabionet img {
+    display: block;
+    margin: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    .gabionet img {
+      width: 40%;
+    }
+  }
+
+  .m_beton img {
+    display: block;
+    margin: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    .m_beton img {
+      width: 40%;
+    }
+  }
+
+  .m_gur img {
+    display: block;
+    margin: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    .m_gur img {
+      width: 40%;
+    }
+  }
+
+  .m_argj img {
+    display: block;
+    margin: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    .m_argj img {
+      width: 40%;
+    }
+  }
+
+  .lum_sit img {
+    display: block;
+    margin: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    .lum_sit img {
+      width: 100%;
+    }
+  }
+
+  .th_kr img {
+    display: block;
+    margin: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    .th_kr img {
+      width: 50%;
+    }
+
+    .p_tr img {
+      width: 50%;
+    }
+
+    .tab_manning table {
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
