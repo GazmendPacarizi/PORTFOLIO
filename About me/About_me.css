@@ -22,7 +22,7 @@ ul li {
     color: white;
     list-style-type: none;
     font-size: 20px;
-    text-decoration: underline;
+    /*text-decoration: underline; */
     text-decoration-thickness: 2px;
 }
 
@@ -80,13 +80,20 @@ p {
     background-color:blue;
 }
 
+.border-transition {
+    border-bottom: 2px solid white;
+    transition: border 0.8s ease-in-out;
+}
 
+.border-transition:hover {
+    border: 3px solid red;
+  }
 
 
 
 
 body {
-    background-image: url(../FOTOT/themes.jpg);
+    background-image: url(../FOTOT//1920x1200_px_abstract.jpg);
 }
 
 
