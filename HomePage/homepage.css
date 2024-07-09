@@ -88,37 +88,12 @@ button {
     width: 150px;
     font-size: 18px;
     border-radius: 5px;
-    margin-left: 10px;
-    background-color: rgb(rgb(55, 0, 255), rgb(4, 128, 0), blue);
-}
-
-button a {
-    font-weight: bold;
-    font-size: 20px;
-    color: blue;
-}
-
-
-button:hover a {
-    background-color: blue;
-    color: white;
-    transform: scale(1.2);
-}
-
-button:hover {
-    background-color: blue;
-    transform: scale(1.2);
-}
-
-.btn_g button {
+    margin-left: 20px;
     padding: 5px;
-    border-radius: 15px;
-    margin-left: 10px;
-} 
-
-.btn_g a {
-    text-decoration: none;
+    background-color: gray;
+    border: 1px solid black;
 }
+
 
 
 .foto img {

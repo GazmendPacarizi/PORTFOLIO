@@ -88,16 +88,16 @@ h4 {
 .btn_1 button {
     background-color: gray;
     color: white;
-    font-size: 20px;
+    font-size: 18px;
     padding: 5px;
-    width: 170px;
+    width: 150px;
     border-radius: 10px;
 
 }
 
 .btn_1 button a {
     color: white;
-    font-size: 20px;
+    font-size: 18px;
     text-decoration: none;
 
 }

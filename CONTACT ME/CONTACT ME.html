@@ -12,20 +12,43 @@
 </head>
 <body>
     <div class="container">
-        <div class="row text-center mt-2">
-                <div class="col-md-3 fs-3">
-                    <a href="../homepage.html">Home</a>
+        <nav class="navbar">
+            <ul class="sidebar">
+                <li onclick="hideSidebar()"><a href=""><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                <li><a href="../homepage.html">Home</a></li>
+                <li><a href="../About/About.html">About</a></li>
+                <li><a href="../PROJECTS/01_FrontEndDeveloper/projects_frontEnd.html">Projects</a></li>
+                <li><a href="CONTACT ME.html">Contact</a></li>
+            </ul>
+            <ul>
+                <li class="hideOnMobile"><a href="../homepage.html">Home</a></li>
+                <li class="hideOnMobile"><a href="../About/About.html">About</a></li>
+                <li class="hideOnMobile"><a href="../PROJECTS/01_FrontEndDeveloper/projects_frontEnd.html">Projects</a></li>
+                <li class="hideOnMobile"><a href="CONTACT ME.html">Contact</a></li>
+                <li class="menu-button" onclick="showSidebar()"><a href="#"><svg width="20px" height="20px" viewBox="0 0 1024 1024" class="icon"  version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M64 192h896v76.8H64V192z m0 281.6h896v76.8H64V473.6z m0 281.6h896V832H64v-76.8z" fill="#000000" /></svg></a></li>
+            </ul>
+        </nav>
+        <div class="row mt-5 d-flex justify-content-center">
+            <div class="col-md-4 p-5 shadow">
+                <div class="social_network_icons p-2">
+                    <p><a href="https://www.facebook.com/gazmend.paqarizi.1"><span><i class="fa-brands fa-facebook"></i></span></a> Gazmend Paçarizi</p>
+                    <p><a href="mailto:gazmendpaqarizi@gmail.com"><span><i class="fa-solid fa-envelope"></i></span></a> gazmendpaqarizi@gmail.com</p>
+                    <p><a href="https://www.linkedin.com/in/gazmend-pa%C3%A7arizi-732aa41ab"><span><i class="fa-brands fa-linkedin"></i></span></a> Gazmend Paçarizi</p>
                 </div>
-                <div class="col-md-3 fs-3">
-                    <a href="../PROJECTS/01_FrontEndDeveloper/projects_frontEnd.html">Projects</a>
-                </div>
-                <div class="col-md-3 fs-3">
-                    <a href="../About me/About_me.html">About me</a>
-                </div>
-                <div class="col-md-3 fs-3">
-                    <a href="CONTACT ME.html">Contact Me</a>
-                </div>
+                
+            </div>
+            <div class="col-md-6 p-3 shadow d-flex justify-content-center">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2467.6154764762955!2d21.151577348642544!3d42.650634074254995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1720508342331!5m2!1sen!2s" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                
+                <!--
+                <ul>
+                    <li><a href="https://www.facebook.com/gazmend.paqarizi.1" target="_blank"><img src="../ICONS/icons8-facebook-48.png" alt="FB"></a></li>
+                    <li><a href="mailto:gazmendpaqarizi@gmail.com" target="_blank"><img src="../ICONS/icons8-gmail-48.png" alt="Gmail"></a></li>
+                    <li><a href="https://www.linkedin.com/in/gazmend-pa%C3%A7arizi-732aa41ab" target="_blank"><img src="../ICONS/icons8-linkedin-48.png" alt="Linkedin"></a></li>
+                </ul> -->
+            </div>
         </div>
+        <!--
         <div class="row mt-5">
             <div class="col-md-7">
                 <div class="text">
@@ -46,9 +69,9 @@
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d755.1300833153095!2d21.152904478246484!3d42.65008042068991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13549ee605110927%3A0x9365bfdf385eb95a!2sPristina!5e0!3m2!1sen!2s!4v1704456355147!5m2!1sen!2s"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
-        </div>   
+        </div>  --> 
     </div>
 
-
+    <script src="contact.js"></script>
 </body>
 </html>
