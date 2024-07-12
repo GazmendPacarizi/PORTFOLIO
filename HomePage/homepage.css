@@ -118,6 +118,10 @@ p {
     .menu-button {
         display: block;
     }
+
+    p {
+        text-align: left;
+    }
 }
 
 
