@@ -81,10 +81,6 @@ nav a:hover {
     
 }
 
-img:hover {
-    border-color: blue;
-    transform: scale(1.2);
-}
 
 button {
     width: 150px;
@@ -96,14 +92,14 @@ button {
     border: 1px solid black;
 }
 
-
-
-.foto img {
-    display: block;
-    margin: auto;
-    border-radius: 50%;
-    width: 50%;
+.card {
+    width: 80%;
 }
+.card .card-body {
+    text-align: center;
+    
+}
+
 
 
 @media screen and (max-width: 768px) {
