@@ -13,6 +13,8 @@ body {
     background-position: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: tomato;
+    display: flex;
+    flex-direction: column;
 }
 
 nav {
@@ -103,9 +105,9 @@ button {
     width: 50%;
 }
 
-p {
+/*p {
     text-align: justify;
-}
+} */
 
 
 
