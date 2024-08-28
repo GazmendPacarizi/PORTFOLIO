@@ -13,6 +13,8 @@ body {
     background-position: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: tomato;
+    display: flex;
+    flex-direction: column;
 }
 
 nav {
@@ -72,10 +74,13 @@ nav a:hover {
     display: none;
 }
 
-i, p {
+i {
     font-size: 20px;
 }
 
+.social_network_icons p {
+    font-size: 20px;
+}
 a i {
     color: black;
 }
@@ -100,6 +105,7 @@ img {
 ul li {
     list-style-type: none;
 }
+
 
 @media screen and (max-width: 768px) {
     .hideOnMobile {
