@@ -117,6 +117,9 @@ h4 {
     font-size: 16px;
 }
 
+footer {
+    margin-top: 10px;
+}
 
 @media screen and (max-width: 768px) {
     .hideOnMobile {
