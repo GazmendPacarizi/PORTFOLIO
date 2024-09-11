@@ -137,7 +137,11 @@ button {
     }
 }
 
-
+@media screen and (max-width:992px) {
+    .card [
+        margin-bottom: 10px;
+    ]
+}
 
 
 
