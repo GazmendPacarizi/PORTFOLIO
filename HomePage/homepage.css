@@ -131,6 +131,10 @@ button {
     footer p {
         text-align: center;
     }
+
+    .card {
+        margin-bottom: 15px;
+    }
 }
 
 
