@@ -98,6 +98,9 @@ button {
     }
 }
 
+.krena_river_description img {
+    display: block;
+}
 @media screen and (max-width:992px) {
     .card {
         margin-bottom: 10px;
