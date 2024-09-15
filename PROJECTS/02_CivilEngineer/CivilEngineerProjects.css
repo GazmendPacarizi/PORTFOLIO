@@ -101,6 +101,10 @@ button {
 .krena_river_description img {
     display: block;
 }
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: black;
+}
 @media screen and (max-width:992px) {
     .card {
         margin-bottom: 10px;
