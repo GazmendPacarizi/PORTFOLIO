@@ -64,6 +64,10 @@ button {
     text-decoration: none;
 }
 
+.list-group-item a {
+    color: black;
+
+}
 .list-group-item:hover {
     background-color: blue;
 }
