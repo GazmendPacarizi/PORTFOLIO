@@ -1,0 +1,34 @@
+.btn {
+    width: 100px;
+    color: white;
+}
+
+.btn a {
+    text-decoration: none;
+    color: white;
+}
+
+.ProfilePic img {
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+    transform: scale(0.6);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    /*mix-blend-mode: soft-light; */
+}
+
+.social_icons {
+    width: 100%;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+.social_icons .icon i {
+    font-size: 30px;
+    color: rgb(0, 128, 117);
+}
+
+.social_icons .icon:hover i {
+    transform: scale(1.2); 
+}
