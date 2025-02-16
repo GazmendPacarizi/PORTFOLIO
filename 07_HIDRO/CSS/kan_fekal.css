@@ -1,0 +1,109 @@
+
+.div1 p {
+    text-align: justify;
+}
+
+.div2 p {
+    text-align: justify;
+}
+
+.div3 p {
+    text-align: justify;
+}
+
+p {
+    text-align: justify;
+}
+
+.div1 img {
+    display: block;
+    margin: auto;
+}
+
+.div2 img {
+    display: block;
+    margin: auto;
+}
+
+.situacioni img, .profili_gjatesor img {
+    display: block;
+    margin: auto;
+}
+
+.profilet_terthore {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.pk1 img {
+    display: block;
+}
+
+.pk2 img {
+    display: block;
+}
+
+.pk3 img {
+    display: block;
+}
+
+.thell_diametri img {
+    display: block;
+    margin: auto;
+}
+
+.ujp_kf img {
+    display: block;
+    margin: auto;
+}
+
+.izometria img {
+    display: block;
+    margin: auto;
+}
+
+@media screen and (min-width: 768px) {
+    .div1 img {
+        width: 40%;
+    }
+
+    .div2 img {
+        width: 80%;
+    }
+
+    .profili_gjatesor img {
+        width: 60%;
+    }
+
+    .pk1, .pk2, .pk3 {
+        width: 80%;
+    }
+
+    .ngarkesat_kapakeve table {
+        width: 80%;
+        margin: auto;
+    }
+
+    .imin table {
+        width: 50%;
+        margin: auto;
+    }
+
+    .thell_diametri img {
+        width: 70%;
+    }
+}
+
+table th, tr, td {
+    text-align: center;
+}
+
+p {
+    text-align: justify;
+}
+
+p ul, li {
+    text-align: justify;
+}

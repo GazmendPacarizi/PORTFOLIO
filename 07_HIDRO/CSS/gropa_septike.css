@@ -1,0 +1,80 @@
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+p {
+    text-align: justify;
+  }
+
+  .heading1 h4 {
+    text-align: center;
+  }
+
+  .img_01 {
+    display: block;
+    margin: auto;
+  }
+
+  table th, tr, td {
+    text-align: center;
+}
+
+/*
+button {
+  margin-left: 10px;
+  width: 200px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+
+button a {
+  font-size: 18px;
+  text-decoration: none;
+}
+
+/*
+button:hover {
+  background-color: blue;
+  transform: scale(1.1);
+}
+
+button:hover a {
+  background-color: blue;
+  color: white;
+  transform: scale(1.2);
+} */
+
+#llog_hid_gSeptike a {
+  text-decoration: none;
+}
+
+#llog_hid_gSeptike {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+#llog_hid_gSeptike:hover {
+  background-color: gray;
+  color: white;
+}
+
+#llog_hid_gSeptike:hover a {
+  color: white;
+}
+
+  @media screen and (min-width: 768px) {
+    .img_01 {
+        width: 100%;
+    
+    }
+  }

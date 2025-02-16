@@ -1,0 +1,39 @@
+html {
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    /*background-image: url(../FOTOT/1920x1200_px_abstract.jpg); */
+    background-position: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.hyrje h1 {
+    font-size: 22px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 500px;
+}
+
+
+
+
+@media screen and (max-width: 767px) {
+    .carousel-item img {
+        width: 100%;
+        height: 220px;
+    }
+}
+
+

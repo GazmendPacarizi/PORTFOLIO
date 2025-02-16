@@ -1,0 +1,183 @@
+html {
+  scroll-behavior: smooth;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  /*background-image: url(../FOTOT/1920x1200_px_abstract.jpg); */
+  background-position: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+
+.accordion-button:hover {
+    background-color: rgba(0, 0, 0, 0.658);
+    color: white;
+  }
+  a {
+    text-decoration: none;
+  }
+
+  .accordion-body img {
+    text-align: center;
+  }
+
+  /*.imazhet_01 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+  }*/
+
+  .imazhet_01 img {
+    display: block;
+    margin: auto;
+  }
+
+  .imazhet_02 {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Meandrimi {
+    margin: 20px 0 0 0;
+  }
+
+  .rrjedhja img {
+    display: block;
+    margin: auto;
+  }
+
+  .imazhet_03 img {
+    display: block;
+    margin: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    .imazhet_01 img {
+      width: 50%;
+    }
+
+    .imazhet_02 img {
+      width: 50%;
+    }
+  }
+
+  .m_bio img {
+    display: block;
+    margin: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    .m_bio img {
+      width: 40%;
+    }
+  }
+
+  .fash_lehta img {
+    display: block;
+    margin: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    .fash_lehta img {
+      width: 40%;
+    }
+  }
+
+  .fash_renda img {
+    display: block;
+    margin: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    .fash_renda img {
+      width: 40%;
+    }
+  }
+
+  .gabionet img {
+    display: block;
+    margin: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    .gabionet img {
+      width: 40%;
+    }
+  }
+
+  .m_beton img {
+    display: block;
+    margin: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    .m_beton img {
+      width: 40%;
+    }
+  }
+
+  .m_gur img {
+    display: block;
+    margin: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    .m_gur img {
+      width: 40%;
+    }
+  }
+
+  .m_argj img {
+    display: block;
+    margin: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    .m_argj img {
+      width: 40%;
+    }
+  }
+
+  .lum_sit img {
+    display: block;
+    margin: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    .lum_sit img {
+      width: 100%;
+    }
+  }
+
+  .th_kr img {
+    display: block;
+    margin: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    .th_kr img {
+      width: 50%;
+    }
+
+    .p_tr img {
+      width: 50%;
+    }
+
+    .tab_manning table {
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }

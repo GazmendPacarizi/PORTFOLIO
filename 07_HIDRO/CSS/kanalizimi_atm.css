@@ -1,0 +1,83 @@
+p {
+    text-align: justify;
+  }
+
+  .skema_kanatm img {
+    display: block;
+    margin: auto;
+  }
+
+  .div1 img {
+    display: block;
+    margin: auto;
+}
+
+table th, tr, td {
+  text-align: center;
+}
+
+.pk1 img {
+  display: block;
+}
+
+.pk2 img {
+  display: block;
+}
+
+.pk3 img {
+  display: block;
+}
+
+.imin table {
+  width: 50%;
+  margin: auto;
+}
+
+ul li {
+  text-align: justify;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  background-color: black;
+}
+
+.sit_kanatm img {
+  display: block;
+  margin: auto;
+}
+
+.detali_shkarkimi img {
+  display: block;
+  margin: auto;
+}
+
+  @media screen and (min-width: 768px) {
+    .skema_kanatm img {
+       width: 85%;
+      }
+
+      .div1 img {
+        width: 50%;
+      }
+
+      .ngarkesat_kapakeve table {
+        width: 100%;
+        margin: auto;
+    }
+
+    .sit_kanatm img {
+      width: 70%;
+    }
+
+    .detali_shkarkimi img {
+      width: 70%;
+    }
+
+  }
+
+  @media screen and (max-width: 767px) {
+    .imin table {
+      width: 90%;
+      margin: auto;
+    }
+  } 

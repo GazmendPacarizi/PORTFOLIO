@@ -1,0 +1,45 @@
+.rezervuaret img {
+    display: block;
+    margin: auto;
+}
+
+.llojet_eFurnizimit img {
+    display: block;
+    margin: auto;
+    width: 500px;
+}
+
+.furnizimi_meGravitacion, .furnizimi_mePompa img {
+    display: block;
+    width: 450px;
+}
+
+.shembull_pompa img {
+    display: block;
+    margin: auto;
+}
+
+.accordion-button:hover {
+    background-color: rgba(0, 0, 0, 0.658);
+    color: white;
+  }
+  a {
+    text-decoration: none;
+  }
+
+  .accordion-body img {
+    text-align: center;
+  }
+
+  .skemat_rezervuaret img {
+    display: block;
+    margin: auto;
+  }
+
+@media screen and (max-width: 767px) {
+    .furnizimi_meGravitacion, .furnizimi_mePompa img {
+        width: 100%;
+    }
+
+    
+}
