@@ -12,21 +12,21 @@
     G = Number(G);
 
 
-    let Y = C * D;
+    let Y = C * D || 0;
     //let Xr = X.toFixed(2); // vetem dy presje dhjetore 
     //console.log(X);
 
-    let N = C + 2 * D; //PERIMETRI
+    let N = C + 2 * D || 0; //PERIMETRI
     //console.log(P);
 
-    let O = ((C * D) / (C + 2 * D)); //RADIUSI
+    let O = ((C * D) / (C + 2 * D)) || 0; //RADIUSI
     //console.log(R);
     
     
-    let v1 = ((1 / G)) * (O **(2 / 3)) * Math.sqrt(E / 100);
+    let v1 = ((1 / G)) * (O **(2 / 3)) * Math.sqrt(E / 100) || 0;
     //console.log(v);
     
-    let Q1 = v1 * Y;
+    let Q1 = v1 * Y || 0;
     
     document.getElementById("rec_Area").innerHTML = "Area is: " + " " + Y.toFixed(2) + " " + "m2";
     document.getElementById("rec_Perimeter").innerHTML = "Perimeter is: " + " " + N.toFixed(2) + " " + "m";
@@ -35,3 +35,11 @@
     document.getElementById("rec_flow").innerHTML = "Flow is: " + " " + Q1.toFixed(2) + " " + "m3/s";
 }
 
+document.querySelectorAll("input").forEach(input => {
+    input.addEventListener("input", function() {
+        if (isNaN(parseFloat(this.value)) && this.value !== "") {
+            alert("Please enter a valid number.");
+            this.value = "";
+        }
+    });
+});
