@@ -11,17 +11,31 @@
 .navbar-brand {
     margin-left: 50px;
     font-size: 21px;
+    color: white !important;
 }
 
+.navbar-brand:hover {
+   color: yellow !important;
+}
+
+.navbar-toggler{
+    color: black !important;
+    background-color: white !important;
+}
 .nav-item a {
     font-size: 17px;
+    color: white !important;
 }
 
 .nav-item a:hover {
-    background-color: rgba(0, 0, 0, 0.653);
-    color: white;
+    transform: scale(1.1);
+    color: yellow !important;
 }
 
+.custom-navbar {
+    background-color: rgba(0, 0, 0, 0.681);
+    color: white !important;
+}
 
 @media screen and (max-width: 767px) {
     .navbar-nav {
@@ -32,4 +46,8 @@
     margin-left: 5px;
 }
 
+.nav-item a:hover {
+    transform: scale(1.0);
+    color: yellow !important;
+}
 }
