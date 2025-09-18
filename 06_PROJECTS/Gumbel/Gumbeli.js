@@ -28,7 +28,7 @@ function calculateAndPlot() {
 
       document.getElementById("results").innerHTML = `
         <strong>📊 Parametra bazë:</strong><br>
-        ➤ Prurja mesatare (𝑋̄): <strong>${mean.toFixed(2)} m³/s</strong><br>
+        ➤ Prurja mesatare (X): <strong>${mean.toFixed(2)} m³/s</strong><br>
         ➤ Devijimi standard (σ): <strong>${stdDev.toFixed(2)} m³/s</strong><br>
         ➤ Numri i vlerave: ${N}<br><br>
         <strong>📈 Prurjet ekstreme sipas T:</strong><br>
@@ -41,7 +41,7 @@ function calculateAndPlot() {
         data: {
           labels: T_values,
           datasets: [{
-            label: 'Prurja ekstreme (m³/s)',
+            label: 'Prurja maksimale (m³/s)',
             data: x_extremes,
             borderColor: '#0077cc',
             backgroundColor: 'rgba(0, 119, 204, 0.2)',
