@@ -54,10 +54,10 @@ function calculateAndPlot() {
         options: {
           scales: {
             x: {
-              title: { display: true, text: 'Koha kthyes T (vite)' }
+              title: { display: true, text: 'Koha kthyese T (vite)' }
             },
             y: {
-              title: { display: true, text: 'Prurja ekstreme (m³/s)' },
+              title: { display: true, text: 'Prurja maksimale (m³/s)' },
               beginAtZero: true
             }
           },
