@@ -1,0 +1,46 @@
+/* Style the select box */
+#object-select {
+  width: 250px;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #333;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  color: #333;
+  appearance: none; /* Removes default arrow in some browsers */
+  background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+}
+
+/* Optional: style the label */
+label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Style the options (limited control via CSS) */
+#object-select option {
+  background-color: #fff;
+  color: #333;
+  padding: 10px;
+}
+
+#calculate{
+  padding: 7px;
+  border-radius: 12px;
+  background-color: rgb(0, 119, 255);
+  color: white;
+}
+
+#calculate:hover{
+  background-color: rgb(0, 162, 255);
+  color: white;rgba(0, 119, 255, 0.644);
+}
+
+#results {
+  font-weight: 500;
+  font-size: 18px;
+}

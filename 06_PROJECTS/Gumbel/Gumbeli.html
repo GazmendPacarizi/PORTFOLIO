@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <title>Gumbel - Prurje Ekstreme & Diagram</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="Gumbeli.css">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; background: #f4f4f4; }
+    input, button { padding: 8px; margin: 5px; font-size: 16px; }
+    #results { margin-top: 20px; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 5px #ccc; }
+    canvas { margin-top: 30px; background: #fff; border-radius: 8px; box-shadow: 0 0 5px #ccc; }
+    h2 { color: #333; }
+  </style>
+</head>
+<body>
+
+  <h2>📘 Metoda Gumbel & Diagrami i Prurjeve Ekstreme</h2>
+
+  <label>Shkruaj prurjet shumëvjeçare (m³/s):</label><br>
+  <input type="text" id="inputFlows" placeholder="p.sh. 10, 25, 15, 40"><br>
+  <button onclick="calculateAndPlot()">Llogarit & Vizualizo</button>
+
+  <div id="results"></div>
+  <canvas id="gumbelChart" width="600" height="400"></canvas>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="Gumbeli.js"></script>
+</body>
+</html>
