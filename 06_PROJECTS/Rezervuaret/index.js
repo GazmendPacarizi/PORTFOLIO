@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "Prurja maksimale ditore është: " + Qmaks_d.toFixed(2) + " m³/ditë";
 
     document.getElementById("prurja_maksimale_orore").innerText =
-      "Prurja maksimale orare është: " + Qmaks_o.toFixed(2) + " m³/orë";
+      "Prurja maksimale orore është: " + Qmaks_o.toFixed(2) + " m³/orë";
 
     updateTable(); // përditëso tabelën
 
