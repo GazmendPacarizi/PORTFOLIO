@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gropa septike</title>
+    <link rel="stylesheet" href="Gropa_septike.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-5 shadow-sm">
+        <div class="row">
+            <div class="col">
+                <h4 class="text-center">Gropat septike</h4>
+                <p>
+                    Shërbejnë për grumbullimin e ujërave fekale të një apo shumë shtëpive. <br>
+                    Mund të pastrohen në periudha të ndryshme kohore si psh një herë në 6 muaj, një herë në vit, apo njëherë në disa vjet.
+                    Mund të ndërtohen nga plastika, betoni i armuar apo çeliku. <br>
+                    Për t'i parë kriteret e projektimit të një grope septike, kliko butonin: <button type="button" id="kriteret" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#myModal">Kriteret</button>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header bg-secondary text-white">
+                                <h5 class="modal-title" id="myModalLabel">Kriteret e projektimit të gropës septike</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Mbyll"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Kriteret projektuese të një grope septike janë:</p>
+                                <ul>
+                                    <li>Gjerësia e gropës është Bmin=0.75 m;</li>
+                                    <li>Thellësia e gropës është Hmin=1.8 m;</li>
+                                    <li>Raporti Gjatësi/Gjerësi L/B=4/1 - 2/1;</li>
+                                    <li>Kufiri i lirë (Lartësia e lirë) është HLmin=0.3 m;</li>
+                                    <li>Vëllimi minimal i ujit në gropë për një shtëpi është Vmin=3000 lit (deri në 6 persona);</li>
+                                    <li>Gropat septike që kanë vëllim më të madh se 3000 litra, duhet të ndahen në dy apo më shumë dhoma (4 dhoma maksimumi);</li>
+                                    <li>Dhoma e parë në të cilën futet uji i ndotur, duhet të jetë me vëllim 2/3 e vëllimit total (për rastin kur kemi dy dhoma) dhe 2/3 e vëllimit të dhomës së dytë (për rastin kur kemi disa dhoma);</li>
+                                    <li>Koha e mbajtjes së ujit duhet të jetë së paku 24 orë, në mënyrë që mbi 60% të materieve të suspenduara të sedimentohen;</li>
+                                    <li>Lymi i grumbulluar për person duhet të sillet në vlerat 30-50 litra/vit;</li>
+                                    <li>Gypi hyrës në gropë septike duhet të ketë ramje më të vogël se 0.3% në mënyrë që shpejtësia rrjedhëse të jetë sa më e vogël;</li>
+                                    <li>Për gropa septike me thellësi më të madhe se 1.2m, duhet të vendosen shkallët;</li>
+                                    <li>Gypi dalës duhet të jetë minimumi 10-15cm më poshtë se gypi hyrës;</li>
+                                    <li>Dyshemeja e gropës septike duhet të jetë nga betoni apo çimentoja, me një pjerrtësi nga gypi dalës.</li>
+                                    <li>Për gropa septike duhet të vendosen shkallët.</li>
+                                </ul>
+                                <br>
+                                <hr>
+                                <p>Vlerat orientuese të vëllimit të lymit në gropë septike për kohë të ndryshme të pastrimit, janë:</p>
+                                <table class="table table-striped table-hover">
+                                    <tr>
+                                        <th>Koha e pastrimit</th>
+                                        <th>Vëllimi i lymit për person/vit</th>
+                                    </tr>
+                                    <tr>
+                                        <td>6 muaj</td>
+                                        <td>30 litra</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1 vit</td>
+                                        <td>50 litra</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2 vite</td>
+                                        <td>70 litra</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3 vite</td>
+                                        <td>85 litra</td>
+                                    </tr>
+                                </table>
+                                <div class="foto">
+                                    <img src="Fotot/GROPA SEPTIKE_PRERJA GJATESORE.jpg" alt="gropa septike" class="img-fluid">
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mbyll</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container py-5">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-secondary text-white">
+                        <h5 class="mb-0">Të dhënat e vendbanimit</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-2">
+                            <label for="nr_banoreve" class="form-label">Numri i banorëve të tanishëm</label>
+                            <input type="text" id="nr_banoreve" class="form-control" required>
+                        </div>
+                        <div class="mb-2">
+                            <label for="periudha_projektuese" class="form-label">Periudha projektuese n (vite)</label>
+                            <input type="text" id="periudha_projektuese" class="form-control" required>
+                        </div>
+                        <div class="mb-2">
+                            <label for="shtimi_popullsise" class="form-label">Nataliteti (%)</label>
+                            <input type="text" id="shtimi_popullsise" class="form-control" required>
+                        </div>
+                        <div class="mb-2">
+                            <label for="shpenzimi_mesatar" class="form-label">Shpenzimi mesatar i ujit (l/b/d)</label>
+                            <input type="text" id="shpenzimi_mesatar" class="form-control" required>
+                        </div>
+                        <div class="mb-2">
+                            <label for="kufiri_lire" class="form-label">Kufiri i lirë (m)</label>
+                            <input type="text" id="kufiri_lire" class="form-control" required>
+                        </div>
+                        <div class="mb-2">
+                            <label for="lartesia_ujit" class="form-label">Lartësia e ujit (m)</label>
+                            <input type="text" id="lartesia_ujit" class="form-control" required>
+                        </div>
+                        <div class="mb-2">
+                            <label for="lymi" class="form-label">Lymi (l/b/vit)</label>
+                            <input type="text" id="lymi" class="form-control" required>
+                        </div>
+                        <div class="mb-2">
+                            <label for="periudha_pastrimit" class="form-label">Periudha e pastrimit (herë/vit)</label>
+                            <input type="text" id="periudha_pastrimit" class="form-control" required>
+                        </div>
+                        <div class="mb-2">
+                            <label for="koha_mbajtjes" class="form-label">Koha e mbajtjes së ujit (orë)</label>
+                            <input type="text" id="koha_mbajtjes" class="form-control" required>
+                        </div>
+                        <div class="mb-2">
+                            <label for="raporti_L-B" class="form-label">Raporti L/B</label><br>
+                            <select name="Raporti" id="raporti_L-B">
+                                <option value="4">L/B = 4/1</option>
+                                <option value="3">L/B = 3/1</option>
+                                <option value="2">L/B = 2/1</option>
+                            </select>
+                        </div>
+                        <div class="d-flex justify-content-start">
+                            <button id="llogarit" class="btn btn-secondary w-50 mt-2">Llogarit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0">Rezultatet</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="text-muted">Pasi të shtypni butonin <strong>Llogarit</strong> shfaqen rezultatet:</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong>Banorë në periudhën projektuese:</strong> <span id="numri_banoreve_periudhe_projektuese"></span></li>
+                            <li class="list-group-item"><strong>Prurja furnizuese e vendbanimit:</strong> <span id="prurja_furnizuese"></span></li>
+                            <li class="list-group-item"><strong>Prurja shkarkuese në gropë septike:</strong> <span id="prurja_shkarkuese"></span></li>
+                            <li class="list-group-item"><strong>Vëllimi total i lymit në vit:</strong> <span id="vellimi_lymit"></span></li>
+                            <li class="list-group-item"><strong>Vëllimi total i gropës septike:</strong> <span id="vellimi_gropes"></span></li>
+                            <li class="list-group-item"><strong>Sipërfaqja e gropës septike:</strong> <span id="siperfaqja_gropes"></span></li>
+                            <li class="list-group-item"><strong>Lartësia e gropës septike (H):</strong> <span id="lartësia_totale"></span></li>
+                            <li class="list-group-item"><strong>Gjatësia e gropës septike (L):</strong> <span id="gjatesia"></span></li>
+                            <li class="list-group-item"><strong>Gjerësia e gropës septike (B):</strong> <span id="gjeresia"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Gropa_septike.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

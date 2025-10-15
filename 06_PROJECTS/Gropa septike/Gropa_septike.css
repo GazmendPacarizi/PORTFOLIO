@@ -1,0 +1,77 @@
+body {
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card-header {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.card-body label {
+  font-weight: 500;
+}
+
+input[type="text"] {
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 0.95rem;
+}
+
+button#llogarit {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.list-group-item {
+  font-size: 0.95rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-group-item strong {
+  color: #343a40;
+}
+
+@media (max-width: 768px) {
+  .card-header {
+    text-align: center;
+  }
+
+  button#llogarit {
+    margin-top: 1rem;
+  }
+}
+
+input[type="text"]{
+    width: 70%;
+}
+
+#raporti_L-B{
+    width: 70%;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+}
+
+select option:checked {
+    background-color: green;
+    color: white;
+}
+
+.list-group li span {
+  font-weight: bold;
+  color: green;
+}
+
+.foto img{
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
