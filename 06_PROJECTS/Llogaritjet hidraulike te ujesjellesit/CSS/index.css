@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Relief&family=League+Spartan:wght@100..900&family=Unkempt:wght@400;700&display=swap');
+body{
+    font-family: 'League Spartan', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+html{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+
+p{
+    font-size: 18px;
+}
+
+
+footer {
+    text-align: center;
+    margin-top: auto;
+    width: 100%;
+    background-color: rgba(0, 128, 0, 0.61);
+}
+
+footer p{
+    text-align: center;
+    color: white;
+    padding: 5px 0;
+}
