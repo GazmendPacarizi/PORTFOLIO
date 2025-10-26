@@ -26,3 +26,23 @@
     document.getElementById("prurja_maksimale_orore").innerText =
       "Prurja maksimale orore është: " + Qmaks_o.toFixed(2) + " l/s";
   };
+
+  //eksporti ne pdf i rezultateve te prurjeve
+    document.getElementById("Eksporto").onclick = function () {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    const NbText = document.getElementById("numri_banoreve_periudhe_projektuese").innerText;
+    const QmesText = document.getElementById("prurja_mesatare").innerText;
+    const QmaksDText = document.getElementById("prurja_maksimale_ditore").innerText;
+    const QmaksOText = document.getElementById("prurja_maksimale_orore").innerText;
+
+    doc.text("Rezultatet e llogaritjes:", 10, 10);
+    doc.text(NbText, 10, 20);
+    doc.text(QmesText, 10, 30);
+    doc.text(QmaksDText, 10, 40);
+    doc.text(QmaksOText, 10, 50);
+
+    doc.save("Rezultatet.pdf");
+  };
+
