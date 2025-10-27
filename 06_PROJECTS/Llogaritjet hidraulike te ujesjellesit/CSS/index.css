@@ -17,6 +17,9 @@ input[type="text"]{
     width: 200px;
 }
 
+.form-select {
+    width: 200px;
+}
 
 p{
     font-size: 18px;
