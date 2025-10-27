@@ -11,6 +11,102 @@
     <link rel="stylesheet" href="../CSS/index.css">
 </head>
 <body>
+    <section class="container mt-3 shadow-sm border">
+         <div class="row">
+            <div class="col">
+                <h4 class="text-center">Tabelat dimensionuese të rrjetit të ujësjellësit</h4>
+                <p>Për dimensionim optimal të rrjetit të shpërndarë të ujësjellësit, përdoren disa tabela me vlera orientuese në varësi të numrit të banorëve dhe prurjeve të ujit. <br>
+                Për t'i parë tabelat, kliko butonin: <button type="button" id="kriteret" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal">Tabelat dimensionuese</button>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header bg-secondary text-white">
+                                <h5 class="modal-title" id="myModalLabel">Kriteret e projektimit të rrjetit të ujësjellësit</h5>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Mbyll"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Tabela e prurjes së zjarrit në varësi të numrit të banorëve:</p>
+                                <table class="table table-bordered table-striped text-center">
+                                    <thead>
+                                        <tr>
+                                            <th>Numri i banorëve</th>
+                                            <th>Q e zjarrit (l/s)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>&lt;5000</td><td>5</td></tr>
+                                        <tr><td>5000–10000</td><td>8</td></tr>
+                                        <tr><td>10000–25000</td><td>10</td></tr>
+                                        <tr><td>25000–50000</td><td>15</td></tr>
+                                        <tr><td>50000–100000</td><td>20</td></tr>
+                                        <tr><td>&gt;100000</td><td>25</td></tr>
+                                    </tbody>
+                                </table>
+                                <hr>
+                                <p>Tabela e prurjeve në varësi të llojit të shpenzuesve:</p>
+                                <table class="table table-bordered table-striped text-center">
+                                    <thead>
+                                        <tr>
+                                            <th>Lloji i përdoruesit</th>
+                                            <th>Norma e hargjimit (l/ditë)</th>
+                                            <th>Koeficienti i jonjëtrajtshmërisë</th>
+                                            <th>Njësia</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>Shkolla</td><td>5–15</td><td>2.0</td><td>Nx/ditë</td></tr>
+                                        <tr><td>Spitale të përgjithshme</td><td>250–650</td><td>2.5</td><td>Shtrat/ditë</td></tr>
+                                        <tr><td>Spitale rurale</td><td>150</td><td>2.5</td><td>Shtrat/ditë</td></tr>
+                                        <tr><td>Hotele</td><td>250–350</td><td>2.5</td><td>Mysafir/d</td></tr>
+                                        <tr><td>Çerdhe</td><td>75–100</td><td>3.0</td><td>Fëmijë/ditë</td></tr>
+                                        <tr><td>Hidrant</td><td>5–8</td><td>–</td><td>–</td></tr>
+                                        <tr><td>Fakultet</td><td>15–20</td><td>2.0</td><td>Student/d</td></tr>
+                                        <tr><td>Konvikt</td><td>75–100</td><td>2.5</td><td>Ban/ditë</td></tr>
+                                        <tr><td>Ushtria</td><td>33-50</td><td>1.2</td><td>Ushtar/ditë</td></tr>
+                                        <tr><td>Klinikë dentale</td><td>260</td><td>1.0</td><td>Pacient/ditë</td></tr>
+                                        <tr><td>Kinema</td><td>2</td><td>2.0</td><td>Vizitor/ditë</td></tr>
+                                        <tr><td>Teatër</td><td>25-30</td><td>2.0</td><td>Vizitor/ditë</td></tr>
+                                        <tr><td>Farmaci</td><td>60</td><td>1.0</td><td>Vizitor/ditë</td></tr>
+                                    </tbody>
+                                </table>
+                                <hr>
+                                <p>Tabela e shpejtësisë propozuese në varësi të prurjes</p>
+                                <table class="table table-bordered table-striped text-center">
+                                    <thead>
+                                        <tr>
+                                            <th>Prurja Q (l/s)</th>
+                                            <th>Shpejtësia e supozuar v (m/s)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>1–6</td><td>0.4</td></tr>
+                                        <tr><td>6–30</td><td>0.5</td></tr>
+                                        <tr><td>31–60</td><td>0.6</td></tr>
+                                        <tr><td>61–75</td><td>0.7</td></tr>
+                                        <tr><td>76–84</td><td>0.8</td></tr>
+                                        <tr><td>85–100</td><td>0.9</td></tr>
+                                        <tr><td>101–160</td><td>1.0</td></tr>
+                                        <tr><td>161–200</td><td>1.1</td></tr>
+                                        <tr><td>201–450</td><td>1.2</td></tr>
+                                        <tr><td>451–700</td><td>1.3</td></tr>
+                                        <tr><td>701–1360</td><td>1.4</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Mbyll</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="container border shadow-sm mt-3" id="te_dhenat_vendbanimit">
         <div class="row my-2">
             <div class="col">
