@@ -1,0 +1,21 @@
+    input[type="number"] {
+      width: 80px;
+    }
+    th, td {
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    input[type="text"]{
+        width: 200px;
+    }
+
+    #pumpTable .table-custom{
+      background-color: red !important;
+    }
+
+      #pumpTable {
+    box-shadow: 5px 5px 10px rgba(250, 1, 1, 0.555);
+    border-radius: 6px;
+    overflow: hidden;
+  }
