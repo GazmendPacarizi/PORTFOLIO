@@ -1,0 +1,40 @@
+.bg-body-custom {
+            background-color: #343a40f3;
+            box-shadow: 0 5px 15px rgba(189, 0, 0, 0.747);
+        }
+
+        .navbar a{
+            color: white;
+            font-size: 20px;
+        }
+
+        .nav-item a:hover{
+            color: rgba(255, 255, 255, 0.774);
+        }
+
+        .navbar-nav{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            gap: 25px;
+        }
+
+        
+        .navbar .nav-link:visited {
+            color: white !important;
+        }
+
+        .navbar .navbar-brand:visited{
+            color: white !important;
+        }
+
+        .navbar-toggler{
+            background-color: rgba(255, 255, 255, 0.884);
+            color: white;
+        }
+        @media screen and (max-width: 768px){
+            .navbar-nav{
+            flex-direction: column;
+            gap: 3px;
+        }
+        }
