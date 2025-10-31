@@ -105,7 +105,7 @@ addFormBtn.addEventListener("click", () => {
       natalitetiInput.removeAttribute("readonly");
       natalitetiInput.value = ""; // or default value
     } else {
-      natalitetiInput.value = "Vlerë fikse - Nuk varet nga rritja e popullsisë"; // or some default fixed value
+      natalitetiInput.value = "Vlerë fikse"; // or some default fixed value
       natalitetiInput.setAttribute("readonly", true);
     }
   } else {
