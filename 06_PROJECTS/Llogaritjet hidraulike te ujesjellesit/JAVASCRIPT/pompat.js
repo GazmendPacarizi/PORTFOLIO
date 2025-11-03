@@ -108,6 +108,6 @@ document.addEventListener("DOMContentLoaded", function() {
         // Shfaqja e rezultateve
         document.getElementById("diametri_llogaritur").textContent = "Diametri i llogaritur është: " + (diametri_llogaritur * 1000).toFixed(2) + " mm";
         document.getElementById("diametri_pervetesuar").textContent = Dp;
-        document.getElementById("humbjet").textContent = "Humbjet gjatësore të presionit janë: " + kf.toFixed(5) + " m";
+        document.getElementById("humbjet").textContent = "Ende nuk janë llogaritur";
     };
 });
