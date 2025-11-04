@@ -103,11 +103,32 @@ document.addEventListener("DOMContentLoaded", function() {
         let Dp_value = match ? parseFloat(match[0]) : 0.001;
 
         // Kalkulimi i humbjeve (Manning simplified)
-        let kf = 124.6 * n**2 / (Dp_value ** 0.333);
+        let kf = 124.6 * Math.pow(n, 2) / Math.pow(Dp_value, 2/3);
+
+        let shpejtesia = Q_m3s / (Math.PI * Math.pow((Dp_value / 1000), 2) / 4);
+
+
+        let humbjet_gjatesore = kf * gjatesia * shpejtesia * shpejtesia / ((Dp_value / 1000) * 2 * 9.81);
+
+        let Hgjeo = KR - KP;
+
+        let i = Hgjeo / gjatesia;
+
+        let Hp = Hgjeo + humbjet_gjatesore;
+
+        let P_pompes = 9.81 * Q_m3s * Hp / 0.75
 
         // Shfaqja e rezultateve
         document.getElementById("diametri_llogaritur").textContent = "Diametri i llogaritur është: " + (diametri_llogaritur * 1000).toFixed(2) + " mm";
+
         document.getElementById("diametri_pervetesuar").textContent = Dp;
-        document.getElementById("humbjet").textContent = "Ende nuk janë llogaritur";
+
+        document.getElementById("shpejtesia_vertete").textContent = "Shpejtësia e vërtetë e rrjedhjes së ujit është:" + " " + shpejtesia.toFixed(2) + " " + "m/s";
+
+        document.getElementById("humbjet").textContent = "Humbjet gjatësore të gypit nga stacioni i pompave deri te rezervuari janë:" + " " + humbjet_gjatesore.toFixed(2) + " " + " m";
+
+        document.getElementById("pjerrtesia_gypit").textContent = "Pjerrtësia e gypit është:" + " " + i.toFixed(4) + " " + " m/m" + " " + " ose" + " " + (i * 100).toFixed(2) + " " + "%";
+        
+        document.getElementById("fuqia_maksimale_pompes").textContent = "Fuqia maksimale e pompave është:" + " " + P_pompes.toFixed(2) + " " + "kW"; 
     };
 });
