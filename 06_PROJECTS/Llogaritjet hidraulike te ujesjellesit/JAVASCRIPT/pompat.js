@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
+  
     document.getElementById("llogarit").onclick = function () {
         // Marrja e vlerave nga inputet
         let Qmaks_d = parseFloat(document.getElementById("prurja_maksimale_ditore").value);
@@ -131,4 +132,5 @@ document.addEventListener("DOMContentLoaded", function() {
         
         document.getElementById("fuqia_maksimale_pompes").textContent = "Fuqia maksimale e pompave është:" + " " + P_pompes.toFixed(2) + " " + "kW"; 
     };
+
 });
