@@ -104,12 +104,13 @@ document.addEventListener("DOMContentLoaded", function() {
         let Dp_value = match ? parseFloat(match[0]) : 0.001;
 
         // Kalkulimi i humbjeve (Manning simplified)
-        let kf = 124.6 * Math.pow(n, 2) / Math.pow(Dp_value, 2/3);
+        let kf = 124.6 * Math.pow(n, 2) / Math.pow(Dp_value, 1/3);
+        
 
         let shpejtesia = Q_m3s / (Math.PI * Math.pow((Dp_value / 1000), 2) / 4);
 
 
-        let humbjet_gjatesore = kf * gjatesia * shpejtesia * shpejtesia / ((Dp_value / 1000) * 2 * 9.81);
+        let humbjet_gjatesore = kf * gjatesia * shpejtesia * shpejtesia / ((Dp_value /1000) * 2 * 9.81);
 
         let Hgjeo = KR - KP;
 
