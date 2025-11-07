@@ -42,6 +42,8 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("shpejtesia_vertete").textContent,
             document.getElementById("humbjet").textContent,
             document.getElementById("pjerrtesia_gypit").textContent,
+            document.getElementById("presioni_gypit").textContent,
+            
             document.getElementById("fuqia_maksimale_pompes").textContent
         ].filter(t => t.trim() !== "");
 

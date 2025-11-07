@@ -120,6 +120,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
         let P_pompes = 9.81 * Q_m3s * Hp / 0.75
 
+        let Pp = 9.81 * 1000 * (KR - KP) / 100000;
+
         // Shfaqja e rezultateve
         document.getElementById("diametri_llogaritur").textContent = "Diametri i llogaritur është: " + (diametri_llogaritur * 1000).toFixed(2) + " mm";
 
@@ -132,6 +134,8 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("pjerrtesia_gypit").textContent = "Pjerrtësia e gypit është:" + " " + i.toFixed(4) + " " + " m/m" + " " + " ose" + " " + (i * 100).toFixed(2) + " " + "%";
         
         document.getElementById("fuqia_maksimale_pompes").textContent = "Fuqia maksimale e pompave është:" + " " + P_pompes.toFixed(2) + " " + "kW"; 
+
+        document.getElementById("presioni_gypit").textContent = "Presioni minimal punues i gypit nga stacioni i pompave deri te rezervuari është:" + " " + Pp.toFixed(2) + " " + "bar"; 
     };
 
 });
