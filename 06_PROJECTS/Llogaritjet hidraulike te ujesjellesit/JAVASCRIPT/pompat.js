@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         let P_pompes = 9.81 * Q_m3s * Hp / 0.75
 
-        let Pp = 9.81 * 1000 * (KR - KP) / 100000;
+        let Pp = 9.81 * 1000 * (KR - KP + humbjet_gjatesore) / 100000;
 
         // Shfaqja e rezultateve
         document.getElementById("diametri_llogaritur").textContent = "Diametri i llogaritur është: " + (diametri_llogaritur * 1000).toFixed(2) + " mm";
