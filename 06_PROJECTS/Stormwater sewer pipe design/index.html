@@ -9,47 +9,47 @@
 </head>
 <body>
     <div class="container mt-3 mt-md-5 border shadow">
-        <h5 class="text-center mt-2 mb-3 mb-md-5">Hydraulic calculation of stormwater sewer pipes</h5>
+        <h5 class="text-center mt-2 mb-3 mb-md-5">Llogaritjet hidraulike të kanalizimit atmosferik</h5>
         <div class="row g-2">
             <div class="col-md-2">
-                <label for="section" class="form-label"><section>Section</section></label>
+                <label for="section" class="form-label"><section>Segmenti</section></label>
                 <input type="text" id="section" class="form-control" placeholder="">
             </div>
             <div class="col-md-2">
-                <label for="surfaceType" class="form-label">Surface type</label>
+                <label for="surfaceType" class="form-label"></label>
                 <select id="surfaceType" class="form-select">
-                    <option value="0.95">Asphalt (C = 0.95)</option>
-                    <option value="0.85">Concrete (C = 0.85)</option>
-                    <option value="0.35">Natural soil (C = 0.35)</option>
-                    <option value="0.55">Compacted soil (C = 0.55)</option>
-                    <option value="0.15">Grass & Forests (C = 0.15)</option>
+                    <option value="0.95">Asfalt (C = 0.95)</option>
+                    <option value="0.85">Beton (C = 0.85)</option>
+                    <option value="0.35">Toka natyrore (C = 0.35)</option>
+                    <option value="0.55">Tokë e ngjeshur (C = 0.55)</option>
+                    <option value="0.15">Bar & Pyje (C = 0.15)</option>
                 </select>
             </div>
             <div class="col-md-2">
-                <label for="intensity" class="form-label">Precipitation intensity (l/s/ha)</label>
-                <input type="text" id="intensity" class="form-control" placeholder="Usually 120 - 180 ">
+                <label for="intensity" class="form-label">Intensiteti i reshjeve (l/s/ha)</label>
+                <input type="text" id="intensity" class="form-control" placeholder="Zakonisht 120 - 180 ">
             </div>
             <div class="col-md-2">
-                <label for="area" class="form-label">Area (ha)</label>
+                <label for="area" class="form-label">Sipërfaqja (ha)</label>
                 <input type="text" id="area" class="form-control" placeholder="1ha = 10000 m2">
             </div>
             <div class="col-md-2">
-                <label for="slope" class="form-label">Slope (%)</label>
-                <input type="text" id="slope" class="form-control" placeholder="Percentage">
+                <label for="slope" class="form-label">Pjerrësia (%)</label>
+                <input type="text" id="slope" class="form-control" placeholder="Përqindja">
             </div>
             <div class="col-md-2">
-                <label for="material" class="form-label">Pipe material (n)</label>
+                <label for="material" class="form-label">Materiali i tubacionit (n)</label>
                     <select id="material" class="form-select">
                         <option value="0.013">HDPE/PE (n = 0.013)</option>
                         <option value="0.011">PVC (n = 0.011)</option>
-                        <option value="0.015">Concrete (n = 0.015)</option>
-                        <option value="0.020">Older pipes (n = 0.020)</option>
+                        <option value="0.015">Beton (n = 0.015)</option>
+                        <option value="0.020">Tubacione të vjetra (n = 0.020)</option>
                     </select>
             </div>
         </div>
         <div class="row mt-2">
             <div class="col d-flex align-items-end justify-content-center">
-                <button type="button" class="btn btn-secondary w-10" onclick="calculateDiameter()">Calculate</button>
+                <button type="button" class="btn btn-secondary w-10" onclick="calculateDiameter()">Llogarit</button>
             </div>
         </div>
         <div class="row mt-3 border shadow-sm">
@@ -63,7 +63,7 @@
     <div class="container">
         <div class="row">
             <div class="text-center mt-3">
-                <button class="btn btn-secondary" onclick="saveToPDF()">📄 Save to PDF</button>
+                <button class="btn btn-secondary" onclick="saveToPDF()">📄 Ruaje në PDF</button>
             </div>
         </div>
     </div>
