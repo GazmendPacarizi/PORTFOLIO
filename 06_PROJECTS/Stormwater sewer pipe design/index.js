@@ -1,4 +1,4 @@
-function calculateDiameter() {
+function llogarit() {
         // Marrja e vlerave nga inputet
         let C = parseFloat(document.getElementById("surfaceType").value);
         let I = parseFloat(document.getElementById("intensity").value);
