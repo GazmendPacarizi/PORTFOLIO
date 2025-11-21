@@ -66,14 +66,13 @@ function llogarit() {
     let Dp_value = match ? parseFloat(match[0]) / 1000 : diametri_llogaritur;
 
     // Shpejtësia
-    let shpejtesia = Q_m3s / (Math.PI * Math.pow(Dp_value, 2) / 4);
+    let shpejtesia = (Q_m3s / (Math.PI * Math.pow(Dp_value, 2) / 4)).toFixed(2);
 
     // Rezultatet
-    document.getElementById("diametri_llogaritur").textContent =
-        "Diametri minimal është: " + (diametri_llogaritur*1000).toFixed(0) + " mm";
+    document.getElementById("diametri_llogaritur").textContent = "Diametri minimal është: " + (diametri_llogaritur*1000).toFixed(0) + " mm";
     document.getElementById("diametri_pervetesuar").textContent = Dp;
-    document.getElementById("shpejtesia_vertete").textContent =
-        `Shpejtësia e rrjedhës ≈ ${shpejtesia.toFixed(2)} m/s`;
+    document.getElementById("shpejtesia_vertete").textContent = "Shpejtësia e rrjedhjes është" + " " + shpejtesia + " " + "m/s";
+    
 
     // Sugjerime
     const suggestion = document.getElementById("sygjerimet");
@@ -91,7 +90,65 @@ function llogarit() {
     document.getElementById("diametri_llogaritur").textContent =
         "Diametri minimal është: " + (diametri_llogaritur*1000).toFixed(0) + " mm";
     document.getElementById("diametri_pervetesuar").textContent = Dp;
-    document.getElementById("shpejtesia_vertete").textContent =
-        `Shpejtësia e rrjedhës ≈ ${shpejtesia.toFixed(2)} m/s`;
+    document.getElementById("shpejtesia_vertete").textContent = "Shpejtësia e rrjedhjes është" + " " + shpejtesia + " " + "m/s";
+        
 
 }
+function saveToPDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    // Header me datën e krijimit
+    let today = new Date();
+    let dateStr = today.toLocaleDateString("sq-AL", {
+        year: "numeric", month: "long", day: "numeric"
+    });
+    doc.setFontSize(12);
+    doc.text(`Raport i krijuar më: ${dateStr}`, 10, 10);
+
+    // Inputet
+    let inpute = [
+        ["Segmenti", document.getElementById("segmenti").value],
+        ["Lloji i sipërfaqes (C)", document.getElementById("lloji_siperfaqes").options[document.getElementById("lloji_siperfaqes").selectedIndex].text],
+        ["Intensiteti i reshjeve", document.getElementById("intensiteti").value + " l/s/ha"],
+        ["Sipërfaqja", document.getElementById("siperfaqja").value + " ha"],
+        ["Pjerrësia", document.getElementById("pjerrtesia").value + " %"],
+        ["Materiali i tubacionit", document.getElementById("materiali").options[document.getElementById("materiali").selectedIndex].text]
+    ];
+
+    let y = 25;
+    doc.setFontSize(12);
+    doc.text("Të dhënat e futura:", 10, y);
+    y += 8;
+    inpute.forEach(([label, value]) => {
+        doc.text(`${label}: ${value}`, 10, y);
+        y += 8;
+    });
+
+    // Rezultatet
+    y += 10;
+    doc.text("Rezultatet e llogaritjes:", 10, y);
+    y += 8;
+
+    let rezultate = [
+        document.getElementById("diametri_llogaritur").textContent,
+        document.getElementById("diametri_pervetesuar").textContent,
+        document.getElementById("shpejtesia_vertete").textContent,
+    ];
+
+    rezultate.forEach(r => {
+        doc.text(r, 10, y);
+        y += 8;
+    });
+
+    // Footer
+    doc.setFontSize(10);
+    doc.text("Copyrighted by Gazmend Paçarizi", 105, 290, { align: "center" });
+
+
+    // Ruaj PDF
+    doc.save("Raporti_Kanalizim_Atmosferik.pdf");
+}
+
+
+
