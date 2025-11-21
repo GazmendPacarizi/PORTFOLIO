@@ -19,3 +19,39 @@
     border-radius: 6px;
     overflow: hidden;
   }
+
+          input[type="text"]{
+            width: 300px;
+        }
+
+        #prurja_zjarrit, #koha_zjarrit {
+        width: 250px;
+        padding: 5px;
+        font-size: 16px;
+        border: 2px solid #333;
+        border-radius: 6px;
+        background-color: #f9f9f9;
+        color: #333;
+        appearance: none; /* Removes default arrow in some browsers */
+        background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 16px;
+        }
+
+
+    
+
+        /* Style the options (limited control via CSS) */
+        #prurja_zjarrit option {
+        background-color: #fff;
+        color: #333;
+        padding: 10px;
+        font-size: 18px;
+        }
+        #koha_zjarrit option {
+        background-color: #fff;
+        color: #333;
+        padding: 10px;
+        font-size: 18px;
+        }
