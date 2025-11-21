@@ -12,12 +12,12 @@
         <h5 class="text-center mt-2 mb-3 mb-md-5">Llogaritjet hidraulike të kanalizimit atmosferik</h5>
         <div class="row g-2">
             <div class="col-md-2">
-                <label for="section" class="form-label"><section>Segmenti</section></label>
-                <input type="text" id="section" class="form-control" placeholder="">
+                <label for="segmenti" class="form-label"><section>Segmenti</section></label>
+                <input type="text" id="segmenti" class="form-control" placeholder="">
             </div>
             <div class="col-md-2">
-                <label for="surfaceType" class="form-label"></label>
-                <select id="surfaceType" class="form-select">
+                <label for="lloji_siperfaqes" class="form-label"></label>
+                <select id="lloji_siperfaqes" class="form-select">
                     <option value="0.95">Asfalt (C = 0.95)</option>
                     <option value="0.85">Beton (C = 0.85)</option>
                     <option value="0.35">Toka natyrore (C = 0.35)</option>
@@ -26,22 +26,22 @@
                 </select>
             </div>
             <div class="col-md-2">
-                <label for="intensity" class="form-label">Intensiteti i reshjeve (l/s/ha)</label>
-                <input type="text" id="intensity" class="form-control" placeholder="Zakonisht 120 - 180 ">
+                <label for="intensiteti" class="form-label">Intensiteti i reshjeve (l/s/ha)</label>
+                <input type="text" id="intensiteti" class="form-control" placeholder="Zakonisht 120 - 180 ">
             </div>
             <div class="col-md-2">
-                <label for="area" class="form-label">Sipërfaqja (ha)</label>
-                <input type="text" id="area" class="form-control" placeholder="1ha = 10000 m2">
+                <label for="siperfaqja" class="form-label">Sipërfaqja (ha)</label>
+                <input type="text" id="siperfaqja" class="form-control" placeholder="1ha = 10000 m2">
             </div>
             <div class="col-md-2">
-                <label for="slope" class="form-label">Pjerrësia (%)</label>
-                <input type="text" id="slope" class="form-control" placeholder="Përqindja">
+                <label for="pjerrtesia" class="form-label">Pjerrësia (%)</label>
+                <input type="text" id="pjerrtesia" class="form-control" placeholder="Përqindja">
             </div>
             <div class="col-md-2">
-                <label for="material" class="form-label">Materiali i tubacionit (n)</label>
-                    <select id="material" class="form-select">
-                        <option value="0.013">HDPE/PE (n = 0.013)</option>
-                        <option value="0.015">Beton (n = 0.015)</option>
+                <label for="materiali" class="form-label">Materiali i tubacionit (n)</label>
+                    <select id="materiali" class="form-select">
+                        <option value="0.013">HDPE/PE</option>
+                        <option value="0.015">Beton</option>
                     </select>
             </div>
         </div>
@@ -51,11 +51,11 @@
             </div>
         </div>
         <div class="row mt-3 border shadow-sm">
-            <div class="col" id="results">
+            <div class="col" id="rezultatet">
                 <p id="diametri_llogaritur"></p>
                 <p id="diametri_pervetesuar"></p>
-                <p id="velocity_result"></p>
-                <p id="suggestionBox"></p>
+                <p id="shpejtesia_vertete"></p>
+                <p id="sygjerimet"></p>
             </div>
         </div>
     </div>
