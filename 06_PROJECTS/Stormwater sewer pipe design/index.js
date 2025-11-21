@@ -1,36 +1,30 @@
 function calculateDiameter() {
         // Marrja e vlerave nga inputet
-        const C = parseFloat(document.getElementById("surfaceType").value);
-        const I = parseFloat(document.getElementById("intensity").value);
-        const A = parseFloat(document.getElementById("area").value);
-        const S = parseFloat(document.getElementById("slope").value);
-        const n = parseFloat(document.getElementById("material").value);
-        const section = parseFloat(document.getElementById("section").value); // m²
+        let C = parseFloat(document.getElementById("surfaceType").value);
+        let I = parseFloat(document.getElementById("intensity").value);
+        let A = parseFloat(document.getElementById("area").value);
+        let S = parseFloat(document.getElementById("slope").value);
+        let gypi = document.getElementById("material").value;
+        let segmenti = parseFloat(document.getElementById("section").value); // m²
 
 
         const resultsBox = document.getElementById("results");
 
         // Validim
-        if (isNaN(C) || isNaN(I) || isNaN(A) || isNaN(S) || isNaN(n)) {
-            resultsBox.style.border = "2px solid red";
-            resultsBox.style.backgroundColor = "#ffe6e6";
-            document.getElementById("diameter_result").textContent = "❌ Ju lutem plotësoni të gjitha fushat me vlera numerike.";
-            document.getElementById("velocity_result").textContent = "";
-            document.getElementById("suggestionBox").textContent = "";
+        if (isNaN(C) || isNaN(I) || isNaN(A) || isNaN(S) || isNaN(gypi)) {
+            alert("Ju lutemi plotësoni të gjitha fushat!");
             return;
         }
 
         // Llogaritja e prurjes Q
-        const Q = C * I * A; // l/s
+        let Q = C * I * A; // l/s
 
         // Llogaritja e diametrit minimal (m)
-        const D = Math.pow(((Q / 1000) * 4 * n * Math.pow(4, 2/3)) / (Math.PI * Math.sqrt(S / 100)), 3/8);
-        const Dmm = D * 1000;
-
-        const Q_m3s = Q /1000;
-
-                let diametri_llogaritur = Math.sqrt((4 * Q_m3s) / (Math.PI * vp));
+        let diametri_llogaritur = Math.pow(((Q / 1000) * 4 * gypi * Math.pow(4, 2/3)) / (Math.PI * Math.sqrt(S / 100)), 3/8);
         let Dp = " "; // Diametri i adoptuar
+
+        let Q_m3s = Q /1000;
+
 
         // Determinimi i diametrit të adoptuar bazuar në materialin e gypit
         if (gypi === "HDPE/PE") {
@@ -76,15 +70,16 @@ function calculateDiameter() {
         let Dp_value = match ? parseFloat(match[0]) /1000 : 0.001;
 
         // Llogaritja e shpejtësisë v = Q / A
-        const velocity = Q_m3s / (Math.PI * Math.pow(D, 2) / 4);
+        let shpejtesia = Q_m3s / (Math.PI * Math.pow(Dp_value, 2) / 4);
 
         // Shfaqja e rezultateve
-        document.getElementById("diameter_result").textContent = `Diametri minimal ≈ ${Dmm} mm`;
+        document.getElementById("diametri_llogaritur").textContent = "Diametri minimal është:" + " " + Dmm + " " + " mm";
+        document.getElementById("diametri_pervetesuar").textContent = Dp;
         document.getElementById("velocity_result").textContent = `Shpejtësia e rrjedhës ≈ ${velocity.toFixed(2)} m/s`;
 
         // Sugjerim dhe stilizim
         const suggestion = document.getElementById("suggestionBox");
-        if (velocity < 0.5) {
+        if (shpejtesia < 0.5) {
             suggestion.textContent = "⚠️ Shpejtësia është shumë e ulët (< 0.5 m/s). Rekomandohet të zvogëlohet diametri ose të rritet pjerrësia.";
             resultsBox.style.border = "2px solid orange";
             resultsBox.style.backgroundColor = "#fff3cd";
@@ -94,6 +89,13 @@ function calculateDiameter() {
             resultsBox.style.backgroundColor = "#e2f7e2";
         }
         };
+
+
+
+
+
+
+
 
 
 
@@ -108,7 +110,7 @@ function calculateDiameter() {
   const slope = document.getElementById("slope").value;
   const material = document.getElementById("material").selectedOptions[0].text;
 
-  const diameter = document.getElementById("diameter_result").textContent;
+  const diameter = document.getElementById("minimal_diameter").textContent;
   const velocity = document.getElementById("velocity_result").textContent;
   const suggestion = document.getElementById("suggestionBox").textContent;
 
