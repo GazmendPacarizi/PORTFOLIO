@@ -184,6 +184,7 @@ document.getElementById("pdf_Vtot").textContent = Vtot.toFixed(2);
   updateTable();
 });
 
+
 document.getElementById("ruajPDF_Rezervuarin").onclick = function () {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
@@ -203,7 +204,7 @@ document.getElementById("ruajPDF_Rezervuarin").onclick = function () {
     let Tzj = document.getElementById("koha_zjarrit").value;
 
     doc.setFontSize(11);
-    doc.text("📌 Inputet e përdorura:", 14, 30);
+    doc.text("Inputet e përdorura:", 14, 30);
     doc.setFontSize(10);
     doc.text(`• Prurja maksimale ditore: ${Qmaks_d} m³/d`, 14, 36);
     doc.text(`• Prurja e zjarrit: ${Qzj} l/s`, 14, 42);
@@ -216,7 +217,7 @@ document.getElementById("ruajPDF_Rezervuarin").onclick = function () {
     let vellimiTot = document.getElementById("vellimiTotal").textContent;
 
     doc.setFontSize(11);
-    doc.text("📊 Rezultatet:", 14, 70);
+    doc.text("Rezultatet:", 14, 70);
     doc.setFontSize(10);
     if (vellimi) doc.text(vellimi, 14, 76);
     if (vellimiZ) doc.text(vellimiZ, 14, 82);
