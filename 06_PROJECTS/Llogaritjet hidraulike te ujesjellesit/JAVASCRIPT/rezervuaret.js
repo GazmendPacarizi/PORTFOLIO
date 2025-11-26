@@ -1,4 +1,5 @@
-      document.addEventListener("DOMContentLoaded", () => {
+
+  document.addEventListener("DOMContentLoaded", () => {
   const tableBody = document.querySelector("#pumpTable tbody");
   const defaultPumpRate = 4.17;
 
@@ -135,49 +136,117 @@
     doc.save("Tabela_Pompes.pdf");
   };
 
+
+
+
+
   document.getElementById("llogarit").onclick = function () {
-    const Nb0 = parseFloat(document.getElementById("nr_banoreve").value);
-    const n = parseFloat(document.getElementById("periudha_projektuese").value);
-    const p = parseFloat(document.getElementById("shtimi_popullsise").value);
-    const qmes = parseFloat(document.getElementById("shpenzimi_mesatar").value);
+  let Qmaks_d = parseFloat(document.getElementById("prurja_maksimale_ditore_rezervuarit").value);
+  let Qzj = parseFloat(document.getElementById("prurja_zjarrit").value);
+  let Tzj = parseFloat(document.getElementById("koha_zjarrit").value);
 
-    if (isNaN(Nb0) || isNaN(n) || isNaN(p) || isNaN(qmes)) {
-      alert("Ju lutem plotësoni të gjitha fushat me vlera numerike.");
-      return;
-    }
+  if (isNaN(Qmaks_d) || isNaN(Qzj) || isNaN(Tzj)) {
+    alert("Ju lutem plotësoni të gjitha fushat me vlera numerike.");
+    return;
+  }
 
-    const Nb = Nb0 * Math.pow(1 + p / 100, n);
-    const Qmes = (Nb * qmes) / (24 * 3600); // l/s
-    const Qmaks_d = Qmes * 1.5 * 86.4; // m³/ditë
-    const Qmaks_o = Qmaks_d * 1.5;
+  updateTable(); // përditëso tabelën
 
-    document.getElementById("numri_banoreve_periudhe_projektuese").innerText =
-      "Numri i banorëve për periudhën projektuese është: " + Math.round(Nb / 100) * 100 + " banorë";
+  let maxPlus = parseFloat(localStorage.getItem("maxPositive")) || 0;
+  let maxMinus = parseFloat(localStorage.getItem("maxNegative")) || 0;
 
-    document.getElementById("prurja_mesatare").innerText =
-      "Prurja mesatare ditore është: " + Qmes.toFixed(2) + " l/s";
+  let Vrez = (maxPlus + maxMinus) * Qmaks_d / 100;
+  let VrezRounded = Math.ceil(Vrez / 10) * 10;
+  let Vzj = (Qzj / 1000) * Tzj * 3600;
+  let Vsht = 0.25 * (Vrez + Vzj);
+  let Vtot = Math.ceil((VrezRounded + Vzj + Vsht) / 10) * 10;
 
-    document.getElementById("prurja_maksimale_ditore").innerText =
-      "Prurja maksimale ditore është: " + Qmaks_d.toFixed(2) + " m³/ditë";
+  document.getElementById("vellimi_shfrytezueshem").textContent = 
+    "Vëllimi i shfrytëzueshëm i rezervuarit është: " + VrezRounded.toFixed(2) + " m³";
 
-    document.getElementById("prurja_maksimale_orore").innerText =
-      "Prurja maksimale orare është: " + Qmaks_o.toFixed(2) + " m³/orë";
+  document.getElementById("vellimi_zjarrit").textContent = 
+    "Vëllimi për zjarrfikje është: " + Vzj.toFixed(2) + " m³";
 
-    updateTable(); // përditëso tabelën
+  document.getElementById("vellimi_shtese").textContent = 
+    "Vëllimi shtesë i rezervuarit është: " + Vsht.toFixed(2) + " m³";
 
-    const maxPositive = parseFloat(localStorage.getItem("maxPositive")) || 0;
-    const maxNegative = parseFloat(localStorage.getItem("maxNegative")) || 0;
+    document.getElementById("vellimiTotal").textContent = "Vëllimi i përgjithshëm i rezervuarit është" + " " + Vtot.toFixed(2) + " " + " m³";
 
-    const Vrez = (maxPositive + maxNegative) * Qmaks_d / 100;
-    const Vzj = 36;
-    const Vshtëse = 0.25 * (Vrez + Vzj);
-    const Vtot = Vrez + Vzj + Vshtëse;
-
-    document.getElementById("rezervuari").innerText = Math.ceil(Vrez.toFixed(2) / 5) * 5 + " m³";
-    document.getElementById("rezervuari_vtot").innerText =
-      "Vëllimi total i rezervuarit është: " + Vtot.toFixed(2) + " m³";
-  };
+    document.getElementById("pdf_Qmaks").textContent = Qmaks_d;
+document.getElementById("pdf_Qzj").textContent = Qzj;
+document.getElementById("pdf_Tzj").textContent = Tzj;
+document.getElementById("pdf_Vrez").textContent = VrezRounded.toFixed(2);
+document.getElementById("pdf_Vzj").textContent = Vzj.toFixed(2);
+document.getElementById("pdf_Vsht").textContent = Vsht.toFixed(2);
+document.getElementById("pdf_Vtot").textContent = Vtot.toFixed(2);
+};
 
   updateTable();
 });
 
+document.getElementById("ruajPDF_Rezervuarin").onclick = function () {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    // Data aktuale
+    const dataSot = new Date().toLocaleDateString("sq-AL");
+
+    // HEADER
+    doc.setFontSize(12);
+    doc.text("Raporti u krijua nga GazCalc Studio", 105, 10, { align: "center" });
+    doc.setFontSize(10);
+    doc.text("Data e krijimit: " + dataSot, 105, 16, { align: "center" });
+
+    // INPUTET
+    let Qmaks_d = document.getElementById("prurja_maksimale_ditore_rezervuarit").value;
+    let Qzj = document.getElementById("prurja_zjarrit").value;
+    let Tzj = document.getElementById("koha_zjarrit").value;
+
+    doc.setFontSize(11);
+    doc.text("📌 Inputet e përdorura:", 14, 30);
+    doc.setFontSize(10);
+    doc.text(`• Prurja maksimale ditore: ${Qmaks_d} m³/d`, 14, 36);
+    doc.text(`• Prurja e zjarrit: ${Qzj} l/s`, 14, 42);
+    doc.text(`• Koha e fikjes së zjarrit: ${Tzj} orë`, 14, 48);
+
+    // REZULTATET
+    let vellimi = document.getElementById("vellimi_shfrytezueshem").textContent;
+    let vellimiZ = document.getElementById("vellimi_zjarrit").textContent;
+    let vellimiSt = document.getElementById("vellimi_shtese").textContent;
+    let vellimiTot = document.getElementById("vellimiTotal").textContent;
+
+    doc.setFontSize(11);
+    doc.text("📊 Rezultatet:", 14, 70);
+    doc.setFontSize(10);
+    if (vellimi) doc.text(vellimi, 14, 76);
+    if (vellimiZ) doc.text(vellimiZ, 14, 82);
+    if (vellimiSt) doc.text(vellimiSt, 14, 88);
+    if (vellimiTot) doc.text(vellimiTot, 14, 94);
+
+    // TABELA
+    const headers = ["Ora", "Rendimenti", "Përdorimi", "Hyrja", "Dalja", "Mbetja"];
+    const rows = [...document.querySelectorAll("#pumpTable tbody tr")].slice(0, 24).map(row => [
+        row.cells[0].textContent,
+        row.cells[1].querySelector("input").value || "",
+        row.cells[2].querySelector("input").value || "",
+        row.cells[3].textContent,
+        row.cells[4].textContent,
+        row.cells[5].textContent
+    ]);
+
+    doc.autoTable({
+        startY: 105,
+        head: [headers],
+        body: rows,
+        styles: { fontSize: 8, halign: 'center' },
+        theme: 'grid'
+    });
+
+    // FOOTER (automatikisht në fund të faqes)
+    const pageHeight = doc.internal.pageSize.height;
+    doc.setFontSize(9);
+    doc.text("Copyrighted by Gazmend Paçarizi", pageHeight / 2, pageHeight - 10, { align: "center" });
+
+    // Ruaje PDF-n
+    doc.save("Raporti_Rezervuari.pdf");
+};
