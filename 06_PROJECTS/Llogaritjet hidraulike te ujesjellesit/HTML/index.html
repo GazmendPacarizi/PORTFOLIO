@@ -167,7 +167,7 @@
         </div>
     </section>
 
-    <section class="container my-3">
+    <section class="container my-3 shadow-sm border">
         <div class="row d-flex justify-content-center">
             <div class="col-md-7">
                 <h4 class="mb-4 text-center">Prurjet e objekteve të veçanta</h4>
@@ -178,21 +178,40 @@
                 </div>
             </div>
         </div>
+        <br>
+    </section>
+    <section class="container my-3 shadow-sm border">
+        <div class="row">
+            <div class="col-md-6">
+                <label for="gjatesia_totale_rrjetit">Gjatësia totale e rrjetit (m)</label><br>
+                <input type="text" id="gjatesia_totale_rrjetit" name="gjatesia_totale_rrjetit"><br>
+                <label for="shuma_prurjeve_objekteve">Prurjet e të gjitha objekteve (l/s)</label><br>
+                <input type="text" id="shuma_prurjeve_objekteve" name="shuma_prurjeve_objekteve"><br>
+                <button id="llogarit_PDF_teGjitha" class="btn btn-secondary my-2">Llogarit</button>
+                
+            </div>
+            <div class="col-md-6">
+                <h5 class="mt-2">Rezultatet</h5>
+                <p>Pasi të shtypni butonin <strong>Llogarit</strong> shfaqen rezultatet</p>
+                <p id="shuma_prurjeve_objekteve_rezultatet"></p>
+                <p id="prurja_specifike"></p>
+                
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col d-flex justify-content-center">
+                <button id="Eksporto_PDF_teGjitha" class="btn btn-danger">Eksporto në PDF</button>
+            </div>
+        </div>
     </section>
     
-
-
-
-
-
 
     <footer>
         <p>&copy; <span id="year"></span> Copyrighted by Gazmend Paçarizi</p>
     </footer>
-    <script src="../JAVASCRIPT/llogaritjet_e_prurjeve.js"></script>
-    <script src="../JAVASCRIPT/objektet_e_vecanta.js"></script>
     <script src="../JAVASCRIPT/footer.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="../JAVASCRIPT/PrurjetLlogaritese.js"></script>
 </body>
 </html>
