@@ -216,3 +216,17 @@ function updateVisibility() {
     formCount = 0;
   }
 }
+
+document.getElementById("llogaritPrurjenSpecifike").onclick = function () {
+  let Ltot = parseFloat(document.getElementById("gjatesia_totale_rrjetit").value);
+  let Qmaks_o_rr = parseFloat(document.getElementById("prurja_maksimale_orore_rrjetit").value);
+  let ShumaObjekteve = parseFloat(document.getElementById("shuma_prurjeve_objekteve").value);
+  
+  let qspecifike = ((Qmaks_o_rr - ShumaObjekteve) / Ltot).toFixed(4);
+
+
+  document.getElementById("shuma_prurjeve_objekteve_rezultatet").innerText =
+    "Prurja specifike e rrjetit është: " + qspecifike + " l/s/m";
+  
+  
+}
