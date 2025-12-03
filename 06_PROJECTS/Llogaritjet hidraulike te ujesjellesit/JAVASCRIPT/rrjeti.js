@@ -1,4 +1,3 @@
-
 let segmentIndex = 0;
 
 function shtoSegment() {
@@ -11,32 +10,80 @@ function shtoSegment() {
 
   container.innerHTML = `
     <div class="row">
-      <div class="col-lg-2"><label>Segmenti</label><input type="text" class="form-control segmenti"></div>
-      <div class="col-lg-2"><label>Gjatesia (m)</label><input type="text" class="form-control gjatesia"></div>
-      <div class="col-lg-2"><label>Prurja specifike (l/s/m)</label><input type="text" class="form-control specifike"></div>
-      <div class="col-lg-2"><label>Prurja rrugore (l/s)</label><input type="text" class="form-control rrugore" readonly></div>
-      <div class="col-lg-2"><label>∑ Prurjeve rrugore</label><select class="form-select shuma_rrugore"></select></div>
-      <div class="col-lg-2"><label>Prurja meritore (l/s)</label><input type="text" class="form-control meritore" readonly></div>
-      <div class="col-lg-2"><label>Prurja max obj (l/s)</label><input type="text" class="form-control max_objekteve"></div>
-      <div class="col-lg-2"><label>Prurja zjarrit (l/s)</label><input type="text" class="form-control zjarrit"></div>
+      <div class="col-lg-2">
+        <label>Segmenti</label>
+        <input type="text" class="form-control segmenti">
+      </div>
+
+      <div class="col-lg-2">
+        <label>Gjatesia (m)</label>
+        <input type="text" class="form-control gjatesia">
+      </div>
+
+      <div class="col-lg-2">
+        <label>Prurja specifike (l/s/m)</label>
+        <input type="text" class="form-control specifike">
+      </div>
+
+      <div class="col-lg-2">
+        <label>Prurja rrugore (l/s)</label>
+        <input type="text" class="form-control rrugore" readonly>
+      </div>
+
+      <div class="col-lg-2">
+        <label>∑ Prurjeve rrugore</label>
+        <select class="form-select shuma_rrugore"></select>
+      </div>
+
+      <div class="col-lg-2">
+        <label>Prurja meritore (l/s)</label>
+        <input type="text" class="form-control meritore" readonly>
+      </div>
+
+      <div class="col-lg-2">
+        <label>Materiali i gypit</label>
+        <select class="form-select lloji_gypit">
+          <option value="HDPE/PE">HDPE/PE</option>
+          <option value="Çelik">Çelik</option>
+          <option value="Beton">Beton</option>
+        </select>
+      </div>
+
+      <div class="col-lg-2">
+        <label>Prurja maks_o_obj (l/s)</label>
+        <input type="text" class="form-control max_objekteve">
+      </div>
+
+      <div class="col-lg-2">
+        <label>Prurja zjarrit (l/s)</label>
+        <input type="text" class="form-control zjarrit">
+      </div>
+
+      <div class="col-lg-2">
+        <label>Prurja maksimale_o (l/s)</label>
+        <input type="text" class="form-control Prurja_maksimale_orore_vendbanimit">
+      </div>
     </div>
+
     <div class="row my-2">
       <div class="col text-center">
         <button class="btn btn-secondary" onclick="llogarit(this)">Llogarit</button>
         <button class="btn btn-danger ms-2" onclick="fshiSegment(this)">🗑️ Fshi</button>
       </div>
     </div>
+
     <div class="row mt-2">
-      <div class="col" id="rezultatet">
-        <p class="prurja_llogaritese_gypit"></p>
-        <p class="shpejtesia_pervetesuar_gypit"></p>
-        <p class="diametri_llogaritur_gypit"></p>
-        <p class="diametri_pervetesuar_gypit"></p>
-        <p class="shpejtesia_vertete_gypit"></p>
-        <p class="humbjet_gjatesore_gypit"></p>
-      </div>
+        <div class="col" id="rezultatet">
+            <p class="prurja_llogaritese_gypit"></p>
+            <p class="shpejtesia_pervetesuar_gypit"></p>
+            <p class="diametri_llogaritur_gypit"></p>
+            <p class="diametri_pervetesuar_gypit"></p>
+            <p class="shpejtesia_vertete_gypit"></p>
+            <p class="humbjet_gjatesore_gypit"></p>
+        </div>
     </div>
-  `;
+`;
+
 
   wrapper.appendChild(container);
   gjeneroOpsioneShume();
@@ -50,6 +97,10 @@ function vendosEvente(container) {
   const meritore = container.querySelector(".meritore");
   const zjarrit = container.querySelector(".zjarrit");
   const shumaSelect = container.querySelector(".shuma_rrugore");
+  const lloji_gypit = container.querySelector(".lloji_gypit");
+  const max_objekteve = container.querySelector(".max_objekteve");
+  const Prurja_maksimale_orore_vendbanimit = container.querySelector(".Prurja_maksimale_orore_vendbanimit");
+
 
   function llogaritAutomatikisht() {
     const g = parseFloat(gjatesia.value.replace(",", "."));
@@ -73,6 +124,8 @@ function vendosEvente(container) {
     });
   }
 }); */
+
+//KETU BEHEN TE GJITHA VLERAT QE PERSERITEN PER CDO RRESHT
   specifike.addEventListener("input", () => {
     const isFirst = container.getAttribute("data-index") === "1";
     if (isFirst) {
@@ -88,11 +141,59 @@ function vendosEvente(container) {
     }
   });
 
+  //Prurja maksimale e objekteve e cila perseritet ne te gjitha
+  Prurja_maksimale_orore_vendbanimit.addEventListener("input", () => {
+    const isFirst = container.getAttribute("data-index") === "1";
+    if (isFirst) {
+      document.querySelectorAll(".Prurja_maksimale_orore_vendbanimit").forEach(el => el.value = Prurja_maksimale_orore_vendbanimit.value);
+    }
+  });
+
+  //KETU NDALEN TE GJITHA VLERAT QE PERSERITEN PER CDO RRESHT
+
   shumaSelect.addEventListener("change", () => {
     const vlera = llogaritShumen(shumaSelect.value);
     container.querySelector(".shpejtesia_pervetesuar_gypit").textContent = `∑ Prurjeve rrugore: ${vlera} l/s`;
   });
 }
+/*
+function gjeneroOpsioneShume() {
+  const containers = document.querySelectorAll(".segment-container");
+  containers.forEach((container, i) => {
+    const select = container.querySelector(".shuma_rrugore");
+    select.innerHTML = "";
+
+    const indekse = Array.from({ length: i + 1 }, (_, k) => k + 1);
+
+    
+    function kombinime(arr) {
+      const result = [];
+      const n = arr.length;
+      for (let len = 1; len <= n; len++) {
+        const helper = (start, combo) => {
+          if (combo.length === len) {
+            result.push(combo.join("+"));
+            return;
+          }
+          for (let j = start; j < n; j++) {
+            helper(j + 1, combo.concat(arr[j]));
+          }
+        };
+        helper(0, []);
+      }
+      return result;
+    }  
+
+    const combos = kombinime(indekse);
+    combos.forEach(c => {
+      const opt = document.createElement("option");
+      opt.value = c;
+      opt.textContent = `Segmentet ${c}`;
+      select.appendChild(opt);
+    });
+  });
+}
+*/
 
 function gjeneroOpsioneShume() {
   const containers = document.querySelectorAll(".segment-container");
@@ -120,7 +221,15 @@ function gjeneroOpsioneShume() {
       return result;
     }
 
+    // --- SHTO OPSIONIN 0 ---
+    const zeroOpt = document.createElement("option");
+    zeroOpt.value = "0";
+    zeroOpt.textContent = "Segmentet 0";
+    select.appendChild(zeroOpt);
+    // ------------------------
+
     const combos = kombinime(indekse);
+
     combos.forEach(c => {
       const opt = document.createElement("option");
       opt.value = c;
@@ -129,6 +238,11 @@ function gjeneroOpsioneShume() {
     });
   });
 }
+
+
+
+
+
 
 function llogaritShumen(combo) {
   const indekse = combo.split('+').map(Number);
@@ -149,6 +263,8 @@ function llogarit(btn) {
   const maxObj = parseFloat(container.querySelector(".max_objekteve").value.replace(",", ".")) || 0;
   const zjarr = parseFloat(container.querySelector(".zjarrit").value.replace(",", ".")) || 0;
   const meritore = parseFloat(container.querySelector(".meritore").value.replace(",", ".")) || 0;
+  const Prurja_maksimale_orore_vendbanimit = parseFloat(container.querySelector(".Prurja_maksimale_orore_vendbanimit").value.replace(",", ".")) || 0;
+  const rrugore = parseFloat(container.querySelector(".rrugore").value.replace(",", ".")) || 0;
 
   const shuma = parseFloat(llogaritShumen(shumaSelect)) || 0;
   const prurjaTotale = meritore + maxObj + zjarr;
@@ -210,4 +326,3 @@ function ruajTeGjithaNePDF() {
 
   doc.save("Raporti_Segmenteve.pdf");
 }
-
