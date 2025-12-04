@@ -16,6 +16,10 @@ button:hover {
     color: white;
 }
 
+.card {
+    box-shadow: 0 5px 10px rgba(189, 0, 0, 0.747);
+}
+
 
 /*input[type=text] - will only select text fields
 input[type=password] - will only select password fields
