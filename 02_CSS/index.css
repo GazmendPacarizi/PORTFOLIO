@@ -11,18 +11,11 @@
 .ProfilePic img {
     display: block;
     margin: auto;
-    border-radius: 10%;
+    border-radius: 50%;
     transform: scale(0.8);
-    /*box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     
-    /*mix-blend-mode: multiply; /* Try: lighten, multiply, screen, overlay */
-    
-    /*border-radius: 50%;
-    transform: scale(0.6);
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-    mix-blend-mode: soft-light; */
-}
-
+} 
 
 
 .social_icons {
