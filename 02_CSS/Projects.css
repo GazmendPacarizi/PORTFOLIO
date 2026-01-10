@@ -9,6 +9,11 @@ h4 {
     flex-direction: column;
 }
 
+.card:hover{
+            transform: scale(1.05);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
 .card-body {
     flex-grow: 1;
 }
