@@ -30,6 +30,32 @@ iframe {
     transform: scale(1.2);
 }
 
+.contact-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Top row buttons */
+.btn-row {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-row .btn {
+  flex: 1; /* equal width */
+}
+
+/* Bottom big button */
+.btn-wide {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 15px;
+}
+
+
 @media screen and (max-width:768px) {
     iframe {
         height: 250px;
