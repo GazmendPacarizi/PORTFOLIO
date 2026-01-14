@@ -1,10 +1,10 @@
 .btn {
     width: 100px;
     color: white;
-    opacity: 0;
+    /*opacity: 0;
     animation: fadeInUp 2s ease-out forwards;
     animation-delay: 1.5s;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease; */
 }
 
 .btn a {
@@ -14,21 +14,21 @@
 
 h1 {
     color: #020b8a !important;
-    opacity: 0;
-    animation: fadeIn 2s ease-in forwards;
+    /*opacity: 0;
+    animation: fadeIn 2s ease-in forwards; */
 }
 
 h2 {
     color: #0077b6 !important;
-    opacity: 0;
+    /*opacity: 0;
     animation: fadeInUp 2s ease-out forwards;
-    animation-delay: 0.5s;
+    animation-delay: 0.5s; */
 }
 
 p {
-    opacity: 0;
+    /*opacity: 0;
     animation: fadeInUp 2s ease-out forwards;
-    animation-delay: 1s;
+    animation-delay: 1s; */
 }
 
 /* Animacion i veçantë për foton me scale 0.8 */
@@ -43,9 +43,9 @@ p {
     border-radius: 50%;
     transform: scale(0.8);
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    opacity: 0;
+    /*opacity: 0; 
     animation: fadeInUpPic 1.5s ease-out forwards;
-    animation-delay: 2s;
+    animation-delay: 2s; */
 }
 
 /* Ikonat sociale me fade-in */
@@ -54,15 +54,15 @@ p {
     display: flex;
     gap: 40px;
     justify-content: center;
-    opacity: 0;
+    /*opacity: 0;
     animation: fadeInUp 2s ease-out forwards;
-    animation-delay: 2.5s;
+    animation-delay: 2.5s; */
 }
 
 .social_icons .icon i {
     font-size: 30px;
     color: rgb(0, 128, 117);
-    transition: transform 0.3s ease, color 0.3s ease;
+    /*transition: transform 0.3s ease, color 0.3s ease; */
 }
 
 .social_icons .icon:hover i {
