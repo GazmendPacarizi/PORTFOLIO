@@ -88,6 +88,69 @@ p {
 .fade-delay-2 { animation-delay: 1s; }
 .fade-delay-3 { animation-delay: 1.5s; }
 
+.carousel-wrapper {
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 25px;
+            width: max-content;
+            animation: slide 30s linear infinite;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0%); }
+        }
+
+        a.card-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .cool-card {
+            min-width: 280px;
+            height: 360px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer;
+        }
+
+        .cool-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+        }
+
+        .cool-card img {
+            height: 160px;
+            object-fit: cover;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .cool-card .card-body {
+            text-align: center;
+            color: #fff;
+        }
+
+        .cool-card h5 {
+            font-weight: 600;
+        }
+
+        .cool-card p {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            color: black;
+        }
+
+        .carousel-track > * {
+            flex-shrink: 0;
+        }
+
 @media screen and (max-width:768px){
     .ProfilePic img {
         transform: scale(0.6);
