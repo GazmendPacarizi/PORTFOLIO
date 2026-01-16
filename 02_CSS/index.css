@@ -154,7 +154,7 @@ p {
 
 @media screen and (max-width:768px){
     .ProfilePic img {
-        transform: scale(0.6);
+        /*transform: scale(0.6); */
         /*animation: fadeInUpPic 1.5s ease-out forwards;
         animation-delay: 2s; */
     }
