@@ -69,6 +69,7 @@ function llogarit() {
     let shpejtesia = (Q_m3s / (Math.PI * Math.pow(Dp_value, 2) / 4)).toFixed(2);
 
     // Rezultatet
+    document.getElementById("prurja_llogaritur").textContent = "Prurja e llogaritur është: " + Q_m3s.toFixed(3) + " m³/s";
     document.getElementById("diametri_llogaritur").textContent = "Diametri minimal është: " + (diametri_llogaritur*1000).toFixed(0) + " mm";
     document.getElementById("diametri_pervetesuar").textContent = Dp;
     document.getElementById("shpejtesia_vertete").textContent = "Shpejtësia e rrjedhjes është" + " " + shpejtesia + " " + "m/s";
@@ -85,13 +86,6 @@ function llogarit() {
         resultsBox.style.border = "2px solid #198754";
         resultsBox.style.backgroundColor = "#e2f7e2";
     }
-
-        // Rezultatet
-    document.getElementById("diametri_llogaritur").textContent =
-        "Diametri minimal është: " + (diametri_llogaritur*1000).toFixed(0) + " mm";
-    document.getElementById("diametri_pervetesuar").textContent = Dp;
-    document.getElementById("shpejtesia_vertete").textContent = "Shpejtësia e rrjedhjes është" + " " + shpejtesia + " " + "m/s";
-        
 
 }
 function saveToPDF() {
@@ -131,6 +125,7 @@ function saveToPDF() {
     y += 8;
 
     let rezultate = [
+        document.getElementById("prurja_llogaritur").textContent,
         document.getElementById("diametri_llogaritur").textContent,
         document.getElementById("diametri_pervetesuar").textContent,
         document.getElementById("shpejtesia_vertete").textContent,
