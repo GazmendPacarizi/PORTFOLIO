@@ -27,7 +27,7 @@ function llogarit() {
     if (material.includes("HDPE")) {
         if (diametri_llogaritur > 0.1 && diametri_llogaritur <= 0.2) Dp = "Diametri i përvetësuar është 200 mm";
         else if (diametri_llogaritur > 0.200 && diametri_llogaritur <= 0.250) Dp = "Diametri i përvetësuar është 250 mm";
-        else if (diametri_llogaritur > 0.250 && diametri_llogaritur <= 0.280) Dp = "Diametri i përvetësuar është 280 mm";
+        else if (diametri_llogaritur > 0.250 && diametri_llogaritur <= 0.315) Dp = "Diametri i përvetësuar është 315 mm";
         else if (diametri_llogaritur > 0.315 && diametri_llogaritur <= 0.355) Dp = "Diametri i përvetësuar është 355 mm";
         else if (diametri_llogaritur > 0.355 && diametri_llogaritur <= 0.400) Dp = "Diametri i përvetësuar është 400 mm";
         else if (diametri_llogaritur > 0.400 && diametri_llogaritur <= 0.450) Dp = "Diametri i përvetësuar është 450 mm";

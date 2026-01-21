@@ -1,0 +1,21 @@
+.form-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .form-control,
+        .form-select {
+            border-radius: 10px;
+        }
+
+        body {
+            font-family: "League Spartan", sans-serif;
+            background: linear-gradient(135deg, #f4f7fb, #e9eef5);
+        }
+
+        .llogaritje-form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
