@@ -1,79 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sq">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stormwater sewer pipe design</title>
-    <link rel="stylesheet" href="index.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Llogaritje Hidraulike të kanalizimit atmosferik</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<link rel="stylesheet" href="stili.css">
+
 </head>
-<body>
-    <div class="container mt-3">
-        <h5 class="text-center mt-2 mb-3 mb-md-5">Llogaritjet hidraulike të kanalizimit atmosferik</h5>
-    </div>
-    <div class="container mt-3 mt-md-5 border shadow llogaritje-form">
-        
-        <div class="row g-2">
-            <div class="col-md-2">
-                <label for="segmenti" class="form-label"><section>Segmenti</section></label>
-                <input type="text" id="segmenti" class="form-control" placeholder="">
-            </div>
-            <div class="col-md-2">
-                <label for="lloji_siperfaqes" class="form-label">Sipërfaqja</label>
-                <select id="lloji_siperfaqes" class="form-select">
-                    <option value="0.95">Asfalt (C = 0.95)</option>
-                    <option value="0.85">Beton (C = 0.85)</option>
-                    <option value="0.35">Toka natyrore (C = 0.35)</option>
-                    <option value="0.55">Tokë e ngjeshur (C = 0.55)</option>
-                    <option value="0.15">Bar & Pyje (C = 0.15)</option>
-                </select>
-            </div>
-            <div class="col-md-2">
-                <label for="intensiteti" class="form-label">Intensiteti i reshjeve (l/s/ha)</label>
-                <input type="text" id="intensiteti" class="form-control" placeholder="Zakonisht 120 - 180 ">
-            </div>
-            <div class="col-md-2">
-                <label for="siperfaqja" class="form-label">Sipërfaqja (ha)</label>
-                <input type="text" id="siperfaqja" class="form-control" placeholder="1ha = 10000 m2">
-            </div>
-            <div class="col-md-2">
-                <label for="pjerrtesia" class="form-label">Pjerrtësia (%)</label>
-                <input type="text" id="pjerrtesia" class="form-control">
-            </div>
-            <div class="col-md-2">
-                <label for="materiali" class="form-label">Materiali i tubacionit (n)</label>
-                    <select id="materiali" class="form-select">
-                        <option value="0.013">HDPE/PE</option>
-                        <option value="0.015">Beton</option>
-                    </select>
-            </div>
-        </div>
-        <div class="row mt-2">
-            <div class="col d-flex align-items-end justify-content-center">
-                <button type="button" class="btn btn-secondary w-10" onclick="llogarit()">Llogarit</button>
-            </div>
-        </div>
-        <div class="row mt-3 border shadow-sm">
-            <div class="col" id="rezultatet">
-                <p id="prurja_llogaritur"></p>
-                <p id="diametri_llogaritur"></p>
-                <p id="diametri_pervetesuar"></p>
-                <p id="shpejtesia_vertete"></p>
-                <p id="sygjerimet"></p>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="text-center mt-3">
-                <button class="btn btn-secondary" onclick="saveToPDF()">📄 Ruaje në PDF</button>
-            </div>
-        </div>
+
+<body class="bg-light">
+
+<div class="container mt-4">
+
+    <button class="btn btn-secondary mb-3" onclick="shtoSegment()">+ Shto Segment</button>
+
+    <div id="container-segmente"></div>
+
+    <!-- Grafikët -->
+    <div class="container mt-5">
+        <canvas id="grafikuQ"></canvas>
+        <canvas id="grafikuV"></canvas>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <div class="container mt-4 mb-5 text-center">
+        <button class="btn btn-danger" onclick="saveToPDF()">Ruaj në PDF</button>
+    </div>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+<script src="llogaritjet.js"></script>
+<script src="grafiket.js"></script>
+<script src="RuajPDF.js"></script>
+
 </body>
 </html>

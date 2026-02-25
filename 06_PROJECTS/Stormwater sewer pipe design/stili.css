@@ -1,0 +1,31 @@
+.segment-card{
+    background:#f8f9fa;
+    border-radius:10px;
+    padding:20px;
+    margin-bottom:25px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+.rezultat-box{
+    margin-top:15px;
+    padding:15px;
+    border-radius:8px;
+    border:2px solid #198754;
+    background:#e9f7ef;
+}
+
+.rezultat-ok{
+    border:2px solid #198754 !important;
+    background:#e9f7ef;
+}
+
+.rezultat-error{
+    border:2px solid #dc3545 !important;
+    background:#fdeaea;
+    animation: blinkBorder 1s infinite;
+}
+
+@keyframes blinkBorder {
+    0% { box-shadow: 0 0 5px #dc3545; }
+    50% { box-shadow: 0 0 20px #dc3545; }
+    100% { box-shadow: 0 0 5px #dc3545; }
+}
