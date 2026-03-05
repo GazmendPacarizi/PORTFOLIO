@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
             else if (diametri_llogaritur > 0.140 && diametri_llogaritur <= 0.160) Dp = "Diametri i përvetësuar është 160 mm";
             else if (diametri_llogaritur > 0.160 && diametri_llogaritur <= 0.180) Dp = "Diametri i përvetësuar është 180 mm";
             else if (diametri_llogaritur > 0.180 && diametri_llogaritur <= 0.200) Dp = "Diametri i përvetësuar është 200 mm";
+            else if (diametri_llogaritur > 0.200 && diametri_llogaritur <= 0.225) Dp = "Diametri i përvetësuar është 225 mm";
             else if (diametri_llogaritur > 0.225 && diametri_llogaritur <= 0.250) Dp = "Diametri i përvetësuar është 250 mm";
             else if (diametri_llogaritur > 0.250 && diametri_llogaritur <= 0.280) Dp = "Diametri i përvetësuar është 280 mm";
             else if (diametri_llogaritur > 0.280 && diametri_llogaritur <= 0.315) Dp = "Diametri i përvetësuar është 315 mm";
