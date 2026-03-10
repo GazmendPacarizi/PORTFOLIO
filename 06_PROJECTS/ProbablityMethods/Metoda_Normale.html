@@ -31,6 +31,21 @@
         max-width: 100%;
         height: auto;
     }
+
+    @media screen and (max-width: 768px) {
+        #summaryTable {
+            width: 100% !important;
+        }
+          canvas {
+              max-width: 100%;
+              height: auto;
+          }
+
+          #inputValues {
+              width: 100%;
+          }
+
+    }
   </style>
 </head>
 <body class="bg-light">
@@ -45,7 +60,7 @@
       <h5>Metoda Normale</h5>
     </div>
     <div class="card-body">
-      <input id="inputValues" type="text" class="form-control w-50 mx-auto mb-3" placeholder="Shkruaj prurjet (m³/s), të ndara me presje">
+      <input id="inputValues" type="text" class="form-control mx-auto mb-3" placeholder="Shkruaj prurjet (m³/s), të ndara me presje">
       <div class="mb-3">
         <label for="chartType">Përzgjidh llojin e grafikut</label>
         <select id="chartType" class="form-select mx-auto" style="max-width:250px;">
@@ -56,7 +71,7 @@
       </div>
       <button class="btn btn-primary me-2" onclick="calculate()"><i class="bi bi-calculator"></i> Llogarit</button>
       <button class="btn btn-secondary me-2" onclick="resetCalc()">Pastro</button>
-      <button class="btn btn-info me-2" onclick="downloadCSV()">Shkarko CSV</button>
+      
       <button class="btn btn-success" onclick="savePDF()">Ruaj në PDF</button>
     </div>
   </div>
