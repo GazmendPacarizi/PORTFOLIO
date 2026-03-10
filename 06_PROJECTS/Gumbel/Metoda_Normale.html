@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <title>Kalkulator Hidrologjik - GazCalc Studio</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+         table {
+      table-layout: fixed;
+      width: 100%;
+    }
+    th, td {
+      text-align: center;
+    }
+    .result-text {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    #summaryTable {
+        table-layout: fixed;
+        width: 100%;
+    }
+  </style>
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+  <div class="alert alert-warning text-center">
+    Për llogaritje më të sakta, nevojiten së paku 20 vlera për vite të njëpasnjëshme
+  </div>
+
+  <div class="card shadow text-center">
+    <div class="card-header bg-primary text-white">
+      <h5>Kalkulator Hidrologjik - Metoda Normale</h5>
+    </div>
+    <div class="card-body">
+      <input id="inputValues" type="text" class="form-control w-50 mx-auto mb-3" placeholder="Shkruaj prurjet (m³/s), të ndara me presje">
+      <div class="mb-3">
+        <label for="chartType">Përzgjidh llojin e grafikut</label>
+        <select id="chartType" class="form-select w-25 mx-auto">
+          <option value="line">Polyline</option>
+          <option value="bar">Bar Chart</option>
+          <option value="scatter">Scatter Plot</option>
+        </select>
+      </div>
+      <button class="btn btn-primary me-2" onclick="calculate()"><i class="bi bi-calculator"></i> Llogarit</button>
+      <button class="btn btn-secondary me-2" onclick="resetCalc()">Pastro</button>
+      <button class="btn btn-info me-2" onclick="downloadCSV()">Shkarko CSV</button>
+      <button class="btn btn-success" onclick="savePDF()">Ruaj në PDF</button>
+    </div>
+  </div>
+
+  <div id="results" class="my-5 text-md-center"></div>
+  
+  
+</div>
+<div class="container mt-3 mt-md-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mt-5 d-flex justify-content-center">
+                    <canvas id="chart" width="600" height="400"></canvas>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div id="summaryTable"></div>
+            </div>
+        </div>
+    </div>
+
+<script>
+let mean, sigma, periods, Q, chartInstance, values;
+
+function calculate() {
+  const input = document.getElementById("inputValues").value;
+  values = input.split(",").map(v => parseFloat(v.trim())).filter(v => !isNaN(v) && v > 0);
+
+  if (values.length < 5) {
+    alert("Sheno më shumë se 5 vlera për të vazhduar");
+    return;
+  }
+
+  values.sort((a,b) => b - a);
+  const n = values.length;
+
+  mean = values.reduce((a,b) => a+b, 0) / n;
+  sigma = Math.sqrt(values.reduce((a,b) => a + Math.pow(b - mean, 2), 0) / (n - 1));
+
+  // Statistika shtesë
+  const min = Math.min(...values);
+  const max = Math.max(...values);
+  const median = values.length % 2 === 0 ? 
+    (values[n/2 - 1] + values[n/2]) / 2 : values[Math.floor(n/2)];
+
+  let html = `<table class="table table-bordered table-striped mt-3">
+    <thead class="table-secondary">
+      <tr>
+        <th>Xi (m³/s)</th><th>m</th><th>Pu = m/(n+1)</th><th>T</th><th>Xi - Mesatarja</th><th>(Xi - Mesatarja)²</th>
+      </tr>
+    </thead><tbody>`;
+
+  values.forEach((x, i) => {
+    const m = n - i;
+    const Pu = m / (n + 1);
+    const T = 100 / (100 - Pu*100);
+    const diff = x - mean;
+    html += `<tr>
+      <td>${x.toFixed(2)}</td>
+      <td>${m}</td>
+      <td>${Pu.toFixed(3)}</td>
+      <td>${T.toFixed(3)}</td>
+      <td>${diff.toFixed(2)}</td>
+      <td>${Math.pow(diff,2).toFixed(2)}</td>
+    </tr>`;
+  });
+
+  html += `</tbody></table>`;
+  html += `<p><strong>Prurja mesatare</strong> = ${mean.toFixed(3)} m³/s</p>`;
+  html += `<p><strong>Devijimi standard</strong> = ${sigma.toFixed(3)} m³/s</p>`;
+  html += `<p><strong>Minimumi</strong> = ${min.toFixed(3)} m³/s</p>`;
+  html += `<p><strong>Maksimumi</strong> = ${max.toFixed(3)} m³/s</p>`;
+  html += `<p><strong>Mediana</strong> = ${median.toFixed(3)} m³/s</p>`;
+
+  document.getElementById("results").innerHTML = html;
+
+  const kValues = {2:0,5:0.842,10:1.282,25:1.752,50:2.326,100:2.626};
+  periods = Object.keys(kValues);
+  Q = periods.map(T => mean + kValues[T]*sigma);
+
+  const ctx = document.getElementById("chart").getContext("2d");
+  if (chartInstance) chartInstance.destroy();
+  const chartType = document.getElementById("chartType").value;
+  chartInstance = new Chart(ctx, {
+    type: chartType,
+    data: {
+      labels: periods,
+      datasets: [{
+        label: 'Prurja ekstreme (m³/s)',
+        data: Q,
+        borderColor: 'blue',
+        backgroundColor: ['red','orange','yellow','green','blue','purple'],
+        fill: false,
+        tension: 0.3,
+        pointRadius: 5
+      }]
+    },
+    options: {
+      responsive: false,
+      scales: {
+        x: { title: { display: true, text: 'Periudha kthyese (vite)' } },
+        y: { title: { display: true, text: 'Prurja Q (m³/s)' } }
+      }
+    }
+  });
+
+  let summary = `<table class="table table-bordered table-striped mt-3 w-50 mx-auto">
+    <thead class="table-secondary">
+      <tr><th>Periudha kthyese (vite)</th><th>Prurja Q (m³/s)</th></tr>
+    </thead><tbody>`;
+  periods.forEach((T, i) => {
+    summary += `<tr><td>${T}</td><td>${Q[i].toFixed(3)}</td></tr>`;
+  });
+  summary += `</tbody></table>`;
+  document.getElementById("summaryTable").innerHTML = summary;
+}
+
+function resetCalc() {
+  document.getElementById("inputValues").value = "";
+  document.getElementById("results").innerHTML = "";
+  document.getElementById("summaryTable").innerHTML = "";
+  if (chartInstance) chartInstance.destroy();
+}
+
+function downloadCSV() {
+  let csv = "Periudha kthyes (vite),Prurja Q (m³/s)\n";
+  periods.forEach((T,i)=>{ csv += `${T},${Q[i].toFixed(3)}\n`; });
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "Prurjet.csv";
+  a.click();
+}
+
+function savePDF() {
+  const { jsPDF } = window.jspdf;
+  const pdf = new jsPDF('p','mm','a4');
+  const date = new Date().toLocaleDateString();
+
+  // Header
+  pdf.setFontSize(12);
+  pdf.text("Projekti u krijua nga GazCalc Studio", 10, 10);
+  pdf.text("Data e krijimit: " + date, 150, 10);
+
+  // Input values
+  pdf.setFontSize(11);
+  pdf.text("Inputet e prurjeve:", 10, 25);
+  pdf.text(document.getElementById("inputValues").value, 10, 32);
+
+  // Statistika
+  pdf.text("Prurja mesatare = " + mean.toFixed(3) + " m³/s", 10, 42);
+  pdf.text("Devijimi standard = " + sigma.toFixed(3) + " m³/s", 10, 50);
+
+  const min = Math.min(...values);
+  const max = Math.max(...values);
+  const median = values.length % 2 === 0 ? 
+    (values[values.length/2 - 1] + values[values.length/2]) / 2 : values[Math.floor(values.length/2)];
+
+  pdf.text("Minimumi = " + min.toFixed(3) + " m³/s", 10, 58);
+  pdf.text("Maksimumi = " + max.toFixed(3) + " m³/s", 10, 66);
+  pdf.text("Mediana = " + median.toFixed(3) + " m³/s", 10, 74);
+
+  // Tabela përmbledhëse
+  pdf.autoTable({
+    startY: 85,
+    head: [['Periudha kthyes (vite)', 'Prurja Q (m³/s)']],
+    body: periods.map((T,i)=>[T, Q[i].toFixed(3)])
+  });
+
+  // Analiza shtesë
+  pdf.setFontSize(11);
+  pdf.text("Analiza:", 10, pdf.lastAutoTable.finalY + 15);
+  pdf.text("Prurjet ekstreme rriten dukshëm pas periudhës 25-vjeçare,", 10, pdf.lastAutoTable.finalY + 22);
+  pdf.text("duke treguar rrezik më të lartë për përmbytje.", 10, pdf.lastAutoTable.finalY + 29);
+
+  // Grafiku si imazh
+  const chartCanvas = document.getElementById("chart");
+  const chartImg = chartCanvas.toDataURL("image/png", 1.0);
+  pdf.addPage();
+  pdf.setFontSize(12);
+  pdf.text("Grafiku i prurjeve ekstreme", pdf.internal.pageSize.getWidth()/2, 20, {align:"center"});
+  pdf.addImage(chartImg, 'PNG', 15, 30, 180, 120);
+
+  // Footer me numra faqeje
+  const pageCount = pdf.internal.getNumberOfPages();
+  for (let i = 1; i <= pageCount; i++) {
+    pdf.setPage(i);
+    pdf.setFontSize(10);
+    pdf.text("Copyrighted by Gazmend Paçarizi", pdf.internal.pageSize.getWidth()/2, pdf.internal.pageSize.getHeight()-10, {align:"center"});
+    pdf.text("Faqe " + i + " nga " + pageCount, pdf.internal.pageSize.getWidth()-40, pdf.internal.pageSize.getHeight()-10);
+  }
+
+  pdf.save("Raporti_GazCalc.pdf");
+}
+
+</script>
+
+</body>
+</html>
