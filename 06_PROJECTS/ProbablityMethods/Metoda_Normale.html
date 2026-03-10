@@ -241,14 +241,14 @@ function savePDF() {
   // Tabela përmbledhëse
   pdf.autoTable({
     startY: 85,
-    head: [['Periudha kthyes (vite)', 'Prurja Q (m³/s)']],
+    head: [['Periudha kthyese (vite)', 'Prurja Q (m³/s)']],
     body: periods.map((T,i)=>[T, Q[i].toFixed(3)])
   });
 
   // Analiza shtesë
   pdf.setFontSize(11);
   pdf.text("Analiza:", 10, pdf.lastAutoTable.finalY + 15);
-  pdf.text("Prurjet ekstreme rriten dukshëm pas periudhës 25-vjeçare,", 10, pdf.lastAutoTable.finalY + 22);
+  pdf.text("Prurjet ekstreme rriten dukshëm nëse luhatja e vlerave është e madhe,", 10, pdf.lastAutoTable.finalY + 22);
   pdf.text("duke treguar rrezik më të lartë për përmbytje.", 10, pdf.lastAutoTable.finalY + 29);
 
   // Grafiku si imazh
