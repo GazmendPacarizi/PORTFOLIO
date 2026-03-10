@@ -15,7 +15,7 @@ function calculateAndPlot() {
       const variance = flowValues.reduce((sum, val) => sum + Math.pow(val - mean, 2), 0) / (N - 1);
       const stdDev = Math.sqrt(variance);
 
-      const T_values = [2, 5, 10, 20, 50, 100];
+      const T_values = [2, 5, 10, 25, 50, 100];
       const x_extremes = [];
 
       T_values.forEach(T => {
