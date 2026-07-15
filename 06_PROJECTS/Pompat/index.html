@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pumps</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      font-weight: 500;
+      margin-top: 10px;
+    }
+
+    select,
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ced4da;
+    }
+
+    #llogarit {
+      width: 100%;
+      padding: 10px;
+      background-color: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    #llogarit:hover {
+      background-color: #023e8a;
+    }
+
+    #results {
+      background-color: #e3f2fd;
+      padding: 15px;
+      border-radius: 6px;
+      border: 1px solid #90caf9;
+      font-weight: 500;
+    }
+
+    #suggestion-box{
+      background-color: #e3f2fd;
+      padding: 15px;
+      border-radius: 6px;
+      border: 1px solid #90caf9;
+      font-weight: 500;
+    }
+
+    img {
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      height: 80vh !important;
+      
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-7 mb-4 mb-md-0" id="imazhi">
+        <img src="BCO.8b81d5a2-cb34-470f-a93a-edda116588ed.png" alt="pompat" class="img-fluid" />
+      </div>
+      <div class="col-md-5">
+        <label for="object-select">Zgjidh llojin e objektit:</label>
+        <select id="object-select" name="Objects" class="form-select">
+          <option value="0.6">Shtëpi për banim</option>
+          <option value="0.75">Më pak ose deri 4 banesa</option>
+          <option value="1.05">5 deri 8 banesa</option>
+          <option value="1.35">9 deri 12 banesa</option>
+          <option value="1.60">13 deri 16 banesa</option>
+          <option value="1.80">17 deri 20 banesa</option>
+          <option value="2.0">21 deri 24 banesa</option>
+          <option value="2.2">25 deri 28 banesa</option>
+          <option value="2.4">29 deri 32 banesa</option>
+          <option value="2.6">33 deri 36 banesa</option>
+          <option value="2.8">37 deri 40 banesa</option>
+          <option value="3.0">41 deri 44 banesa</option>
+          <option value="3.2">45 deri 48 banesa</option>
+          <option value="3.4">49 deri 52 banesa</option>
+          <option value="3.6">53 deri 56 banesa</option>
+          <option value="3.8">57 deri 60 banesa</option>
+        </select>
+        <div class="calculations">
+          <label for="lartesia_objektit">Lartësia e ngritjes së ujit (m)</label>
+          <input type="text" id="lartesia_objektit" required class="form-control" />
+          <label for="presioni_minimal">Presioni minimal në pikën më të lartë (m)</label>
+          <input type="text" id="presioni_minimal" required class="form-control" />
+          <label for="numri_kateve">Numri i kateve</label>
+          <input type="text" id="numri_kateve" required class="form-control" />
+          <button id="llogarit">Llogarit</button>
+        </div>
+
+        <p id="results" class="mt-3"></p>
+        <div id="suggestion-box">
+            <p id="pipe-dimension"></p>
+            <p id="pipe-dimension_real"></p>
+            <p id="pressure-per-floor"></p>
+            <canvas id="pressureLossChart" width="400" height="200"></canvas>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="container mt-2">
+      <div class="row">
+          <div class="col text-center">
+              <button id="eksportoPDF" class="btn btn-success mt-3">Eksporto në PDF
+          </div>
+      </div>
+  </div>
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="chart.js"></script>
+  <script src="cloudfare.js"></script>
+  <script src="canvas.js"></script>
+
+  <script src="index.js"></script>
+  <script src="eksportPDF.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
